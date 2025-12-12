@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME DECOR - ĐƠN HÀNG</title>
+    <link rel="icon" type="image/png"  href="../img/logo.png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/user_admin.css">
+    <link rel="stylesheet" href="../css/order_admin.css">
+    <link rel="stylesheet" href="../css/admin_profile_style.css">
+
+</head>
+<body>
+
+<div class="admin-container">
+    <header class="header">
+        <div class="logo-placeholder">
+            <img src="../img/logo.png" alt="Logo Modern Homes">
+            <p class="logo">HOME DECOR</p>
+        </div>
+
+        <div class="header-icons">
+
+            <div class="gmail-dropdown">
+                <i class="fa-solid fa-envelope gmail-icon"></i>
+
+                <div id="gmailMenuContent" class="dropdown-content gmail-content">
+                    <div class="dropdown-header">Gmail</div>
+                    <p class="no-messages-text">Không có Gmail nào.</p>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Mở Gmail</a>
+                </div>
+            </div>
+            <div class="notification-dropdown">
+                <i class="fa-solid fa-bell notification-icon"></i>
+
+                <div id="notificationMenuContent" class="dropdown-content notification-content">
+                    <div class="dropdown-header">Thông Báo Mới (5)</div>
+                    <a href="#">Đơn hàng mới #1001</a>
+                    <a href="#">Sản phẩm hết hàng</a>
+                    <a href="#">Khách hàng mới đăng ký</a>
+                    <a href="#">Đơn hàng #1005 vừa được hủy bỏ</a>
+                    <a href="#">Cần duyệt 3 đánh giá sản phẩm mới</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Xem tất cả</a>
+                </div>
+            </div>
+
+            <div class="user-dropdown">
+                <i class="fas fa-user-circle user-logo" ></i>
+
+                <div id="userMenuContent" class="dropdown-content">
+                    <a href="admin_thong_tin_tai_khoan.html"> Thông tin tài khoản</a>
+                    <a href="admin_doi_mat_khau.html"> Đổi mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="logout-link"> Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li ><a href="../admin_homepage.jsp">Tổng quan</a></li>
+                    <li><a href="admin_products.html"> Sản phẩm</a></li>
+                    <li class="active"><a href="#"> Đơn hàng</a></li>
+                    <li><a href="admin_customer.html"> Khách hàng</a></li>
+                    <li><a href="admin_profile.html"> Hồ sơ</a></li>
+                    <li><a href="admin_setting.html"> Cài đặt</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div class="user-management-panel">
+                <h2 class="page-title">Quản Lý Đơn Hàng</h2>
+
+                <div class="controls-bar">
+                    <div class="search-filters">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" placeholder="Tìm kiếm" class="search-input-order">
+                        </div>
+                        <select class="filter-select">
+                            <option selected>Mặc Định</option>
+                            <option>Đã Gửi</option>
+                            <option>Đang Xử Lý</option>
+                            <option>Đã Hủy</option>
+                        </select>
+                    </div>
+                    <button class="export-btn">
+                        Xuất <i class="fas fa-file-export"></i>
+                    </button>
+                </div>
+
+                <div class="user-table-container">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th style="width: 30px;"><input type="checkbox"></th>
+                            <th>Mã Đơn Hàng</th>
+                            <th>Tên Khách Hàng</th>
+                            <th style="width: 150px;">Ngày</th>
+                            <th>Thanh Toán</th>
+                            <th>Tổng Tiền</th>
+                            <th>Trạng Thái</th>
+                            <th>Hoạt Động</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="clickable-row" data-href="admin_order_datails.html">
+                            <td><input type="checkbox"></td>
+                            <td>#DU00017</td>
+                            <td>Nguyễn Tuấn Hưng</td>
+                            <td>3/10/2024 20:02</td>
+                            <td><span class="badge payment-paid">Đã Thanh Toán</span></td>
+                            <td>200.000 VNĐ</td>
+                            <td><span class="badge status-sent">Đã Gửi</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#DU00016</td>
+                            <td>Trần Tuấn Kiệt</td>
+                            <td>5/9/2024 18:06</td>
+                            <td><span class="badge payment-paid">Đã Thanh Toán</span></td>
+                            <td>220.000 VNĐ</td>
+                            <td><span class="badge status-processing">Đang Xử Lý</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#DU00015</td>
+                            <td>Nguyễn Trường Giang</td>
+                            <td>3/8/2024 15:02</td>
+                            <td><span class="badge payment-paid">Đã Thanh Toán</span></td>
+                            <td>300.000 VNĐ</td>
+                            <td><span class="badge status-sent">Đã Gửi</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#DU00014</td>
+                            <td>Lê Thị M</td>
+                            <td>20/7/2024 11:45</td>
+                            <td><span class="badge payment-paid">Đã Thanh Toán</span></td>
+                            <td>100.000 VNĐ</td>
+                            <td><span class="badge status-delivered">Đã Giao</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#DU00013</td>
+                            <td>Đặng Thị Phương Mai</td>
+                            <td>12/7/2024 16:30</td>
+                            <td><span class="badge payment-refund">Đã Hoàn Tiền</span></td>
+                            <td>400.000 VNĐ</td>
+                            <td><span class="badge status-delivered">Đã Giao</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#DU00012</td>
+                            <td>Phạm Hồng Sơn</td>
+                            <td>30/6/2024 10:20</td>
+                            <td><span class="badge payment-paid">Đã Thanh Toán</span></td>
+                            <td>500.000 VNĐ</td>
+                            <td><span class="badge status-delivered">Đã Giao</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#DU00011</td>
+                            <td>Nguyễn Văn Bảo</td>
+                            <td>25/6/2024 18:30</td>
+                            <td><span class="badge payment-cancelled">Đã Hủy</span></td>
+                            <td>270.000 VNĐ</td>
+                            <td><span class="badge status-delivered">Đã Giao</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>#DU00010</td>
+                            <td>Nguyễn Thị Thảo</td>
+                            <td>13/6/2024 14:50</td>
+                            <td><span class="badge payment-paid">Đã Thanh Toán</span></td>
+                            <td>980.000 VNĐ</td>
+                            <td><span class="badge status-delivered">Đã Giao</span></td>
+                            <td><i class="fas fa-ellipsis-v action-menu"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination-footer">
+                    <div class="pagination">
+                        <button class="page-link disabled">Quay lại</button>
+                        <button class="page-link active-page">1</button>
+                        <button class="page-link">2</button>
+                        <button class="page-link">3</button>
+                        <button class="page-link">Tiếp Theo</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+</div>
+<script src="../js/order_admin.js"></script>
+
+</body>
+</html>

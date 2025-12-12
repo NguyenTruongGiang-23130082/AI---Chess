@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME DECOR - CHI TIẾT KHÁCH HÀNG</title>
+    <link rel="icon" type="image/png"  href="../img/logo.png" >
+    <link rel="stylesheet" href="../css/admin_customer_detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin_profile_style.css">
+</head>
+<body>
+<div class="admin-container">
+    <header class="header">
+        <div class="logo-placeholder">
+            <img src="../img/logo.png" alt="Logo Modern Homes">
+            <p class="logo">HOME DECOR</p>
+        </div>
+
+        <div class="header-icons">
+
+            <div class="gmail-dropdown">
+                <i class="fa-solid fa-envelope gmail-icon"></i>
+
+                <div id="gmailMenuContent" class="dropdown-content gmail-content">
+                    <div class="dropdown-header">Gmail</div>
+                    <p class="no-messages-text">Không có Gmail nào.</p>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Mở Gmail</a>
+                </div>
+            </div>
+            <div class="notification-dropdown">
+                <i class="fa-solid fa-bell notification-icon"></i>
+
+                <div id="notificationMenuContent" class="dropdown-content notification-content">
+                    <div class="dropdown-header">Thông Báo Mới (5)</div>
+                    <a href="#">Đơn hàng mới #1001</a>
+                    <a href="#">Sản phẩm hết hàng</a>
+                    <a href="#">Khách hàng mới đăng ký</a>
+                    <a href="#">Đơn hàng #1005 vừa được hủy bỏ</a>
+                    <a href="#">Cần duyệt 3 đánh giá sản phẩm mới</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Xem tất cả</a>
+                </div>
+            </div>
+
+            <div class="user-dropdown">
+                <i class="fas fa-user-circle user-logo" ></i>
+
+                <div id="userMenuContent" class="dropdown-content">
+                    <a href="admin_thong_tin_tai_khoan.html"> Thông tin tài khoản</a>
+                    <a href="admin_doi_mat_khau.html"> Đổi mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="logout-link"> Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../admin_homepage.jsp">Tổng quan</a></li>
+                    <li><a href="admin_product.html"> Sản phẩm</a></li>
+                    <li><a href="admin_order.html"> Đơn hàng</a></li>
+                    <li class="active"><a href="admin_customer.html"> Khách hàng</a></li>
+                    <li><a href="admin_profile.html"> Hồ sơ</a></li>
+                    <li><a href="admin_setting.html"> Cài đặt</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content-area">
+            <div class="content-header">
+                <h1 class="page-title">Nguyễn Trường Giang</h1>
+                <div class="header-actions">
+                    <button class="action-btn delete-btn"><i class="fas fa-trash-alt"></i> Xóa</button>
+
+                    <button class="action-btn edit-btn"><i class="fas fa-pen"></i> Chỉnh sửa</button>
+                </div>
+            </div>
+
+
+            <div class="customer-detail-layout">
+                <div class="customer-info-col">
+                    <div class="customer-profile-card admin-content-card">
+                        <div class="profile-avatar">
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.sIJ5UUGyYKP5kePhOg9yGwHaHa?cb=ucfimg2&pid=ImgDet&ucfimg=1&w=184&h=184&c=7&dpr=1.3&o=7&rm=3" alt="Avatar">
+                        </div>
+                        <h3 class="profile-name">Nguyễn Trường Giang</h3>
+                        <p class="profile-contact">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:nguyentuankiet@gmail.com">nguyentruonggiang@gmail.com</a>
+                        </p>
+                        <p class="profile-contact">
+                            <i class="fas fa-phone"></i>
+                            0944459364
+                        </p>
+
+                        <div class="profile-divider"></div>
+
+                        <div class="stat-item">
+                            <p class="stat-label">Đơn hàng gần nhất:</p>
+                            <p class="stat-value"><a href="#">#0001</a></p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-label">Giá trị đơn hàng trung bình:</p>
+                            <p class="stat-value">574.000 VNĐ</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-label">Đăng ký:</p>
+                            <p class="stat-value">2 tháng trước</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-label">Email Marketing:</p>
+                            <p class="stat-value">Đã đăng ký</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-content-col">
+
+                    <div class="customer-note-card admin-content-card">
+                        <label for="customer-note">Ghi chú về khách hàng</label>
+                        <textarea id="customer-note" rows="3" placeholder="Thêm ghi chú quan trọng về khách hàng này..."></textarea>
+                    </div>
+
+                    <div class="customer-orders-card admin-content-card">
+                        <h2>Đơn hàng</h2>
+                        <div class="table-responsive">
+                            <table class="data-table order-detail-table">
+                                <thead>
+                                <tr>
+                                    <th>Đơn hàng</th>
+                                    <th>Ngày</th>
+                                    <th>Tình trạng</th>
+                                    <th>Số mặt hàng</th>
+                                    <th>Tổng cộng</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><a href="#" class="order-link">#0001</a></td>
+                                    <td>Hôm nay lúc 8:00 AM</td>
+                                    <td><span class="status pending-status">Chờ xử lý</span></td>
+                                    <td>4</td>
+                                    <td>320.000 VNĐ</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="order-link">#0002</a></td>
+                                    <td>15 Tháng 5, 2025</td>
+                                    <td><span class="status completed-status">Hoàn thành</span></td>
+                                    <td>7</td>
+                                    <td>2.000.000VNĐ</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="order-link">#0003</a></td>
+                                    <td>7 Tháng 1, 2025</td>
+                                    <td><span class="status completed-status">Hoàn thành</span></td>
+                                    <td>1</td>
+                                    <td>340.000VNĐ</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="order-link">#0004</a></td>
+                                    <td>19 Tháng 10, 2025</td>
+                                    <td><span class="status completed-status">Hoàn thành</span></td>
+                                    <td>2</td>
+                                    <td>704.000VNĐ</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="order-footer">
+                            <a href="#" class="view-all-link">Xem tất cả 7 đơn hàng</a>
+                        </div>
+                    </div>
+
+                    <div class="customer-addresses-card admin-content-card">
+                        <h2>Địa chỉ</h2>
+                        <div class="address-box">
+                            <p class="address-name">Thành phố Hồ Chí Minh</p>
+                            <p class="address-details">Kí túc xá khu B Đại học Quốc gia</p>
+                        </div>
+                        <div class="address-box">
+                            <p class="address-name">Quảng Ngãi</p>
+                            <p class="address-details">Phổ Thuân, Đức Phổ</p>
+                        </div>
+                        <button class="action-btn primary-btn add-address-btn"><i class="fas fa-plus"></i> Thêm Địa Chỉ Mới</button>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>

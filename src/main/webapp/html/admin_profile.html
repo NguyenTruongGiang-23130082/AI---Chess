@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME DECOR - HỒ SƠ</title>
+    <link rel="icon" type="image/png"  href="../img/logo.png" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin_profile_style.css">
+
+</head>
+<body>
+<div class="admin-container">
+    <header class="header">
+        <div class="logo-placeholder">
+            <img src="../img/logo.png" alt="Logo Modern Homes">
+            <p class="logo">HOME DECOR</p>
+        </div>
+
+        <div class="header-icons">
+
+            <div class="gmail-dropdown">
+                <i class="fa-solid fa-envelope gmail-icon"></i>
+
+                <div id="gmailMenuContent" class="dropdown-content gmail-content">
+                    <div class="dropdown-header">Gmail</div>
+                    <p class="no-messages-text">Không có Gmail nào.</p>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Mở Gmail</a>
+                </div>
+            </div>
+            <div class="notification-dropdown">
+                <i class="fa-solid fa-bell notification-icon"></i>
+
+                <div id="notificationMenuContent" class="dropdown-content notification-content">
+                    <div class="dropdown-header">Thông Báo Mới (5)</div>
+                    <a href="#">Đơn hàng mới #1001</a>
+                    <a href="#">Sản phẩm hết hàng</a>
+                    <a href="#">Khách hàng mới đăng ký</a>
+                    <a href="#">Đơn hàng #1005 vừa được hủy bỏ</a>
+                    <a href="#">Cần duyệt 3 đánh giá sản phẩm mới</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Xem tất cả</a>
+                </div>
+            </div>
+
+            <div class="user-dropdown">
+                <i class="fas fa-user-circle user-logo" ></i>
+
+                <div id="userMenuContent" class="dropdown-content">
+                    <a href="admin_thong_tin_tai_khoan.html"> Thông tin tài khoản</a>
+                    <a href="admin_doi_mat_khau.html"> Đổi mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="logout-link"> Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../admin_homepage.jsp">Tổng quan</a></li>
+                    <li><a href="admin_products.html"> Sản phẩm</a></li>
+                    <li><a href="admin_order.html"> Đơn hàng</a></li>
+                    <li><a href="admin_customer.html"> Khách hàng</a></li>
+                    <li class="active"><a href="admin_profile.html"> Hồ sơ</a></li>
+                    <li><a href="admin_setting.html"> Cài đặt</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="profile-header-section">
+                <div class="cover-image-container">
+                    <img src="https://i.pinimg.com/736x/68/7a/95/687a9516347d14f79b5b3246070fa77c.jpg" alt="Cover Image" class="cover-image">
+                    <button class="change-cover-btn"><i class="fas fa-camera"></i> Thay đổi ảnh bìa</button>
+                </div>
+
+                <div class="profile-info-bar">
+                    <div class="profile-avatar-container">
+                        <img src="https://i.pinimg.com/736x/df/9c/29/df9c295c536ad53c490e02c99c73f8c3.jpg" alt="Company Logo" class="profile-avatar">
+                    </div>
+                    <div class="user-details">
+                        <h1 class="user-name">HOME DECOR Admin <i class="fas fa-check-circle verified-icon"></i></h1>
+                        <p class="user-meta"><i class="fas fa-map-marker-alt"></i> Việt Nam | <i class="fas fa-calendar-alt"></i> Tham gia tháng 3 năm 2013</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-content-section">
+                <div class="profile-tabs">
+                    <span class="tab-item active-tab">Hồ sơ</span>
+                    <span class="tab-item">Cài đặt</span>
+                </div>
+
+                <button class="edit-profile-btn"><i class="fas fa-edit"></i> Chỉnh sửa hồ sơ</button>
+
+                <div class="profile-details-wrapper">
+
+                    <div class="profile-details-left">
+                        <h3 class="section-title">Giới Thiệu</h3>
+                        <div class="info-group">
+                            <label>Tiểu sử</label>
+                            <p class="info-text">Đây là tài khoản quản trị chính của hệ thống HOME DECOR, chuyên cung cấp các sản phẩm nội thất và trang trí nhà cửa thông minh.</p>
+                        </div>
+
+                        <div class="info-group">
+                            <label>Vị trí</label>
+                            <p class="info-text">Chủ cửa hàng/Quản lý cấp cao</p>
+                        </div>
+
+                        <div class="info-group">
+                            <label>Điện thoại</label>
+                            <p class="info-text">0944459364</p>
+                        </div>
+
+                        <div class="info-group">
+                            <label>Ngày thành lập</label>
+                            <p class="info-text">01.03.2013</p>
+                        </div>
+
+                        <div class="info-group">
+                            <label>Email</label>
+                            <p class="info-text">admin@homedecor.com</p>
+                        </div>
+
+                        <div class="info-group">
+                            <label>Địa chỉ công ty</label>
+                            <p class="info-text">Đại học Nông Lâm TP.Hồ Chí Minh</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-details-right">
+                        <h3 class="section-title">Thống Kê Nhanh</h3>
+                        <div class="quick-stats-grid">
+                            <div class="stat-item">
+                                <i class="fas fa-box"></i>
+                                <p class="stat-value">200</p>
+                                <p class="stat-label">Sản phẩm</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <p class="stat-value">2</p>
+                                <p class="stat-label">Khách hàng</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p class="stat-value">85</p>
+                                <p class="stat-label">Đơn hàng mới</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-star"></i>
+                                <p class="stat-value">4.9/5</p>
+                                <p class="stat-label">Đánh giá TB</p>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-divider"></div>
+
+                        <h3 class="section-title">Liên Kết Nhanh</h3>
+                        <div class="share-link-copy">
+                            <p>Đường dẫn đến Trang Chủ Admin:</p>
+                            <div class="link-box">
+                                http://localhost:63342/webBanSanPhamGoTrangTri/html/homepage_admin.html
+                                <i class="fas fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>

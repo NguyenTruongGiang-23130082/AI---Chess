@@ -1,0 +1,408 @@
+/* admin_order_datails.css */
+
+/* --- Biến Màu Sắc (Sử dụng lại các biến từ homepage_admin.css) --- */
+:root {
+    --primary-color: #8B5E3C;
+    --secondary-color: #A56B43;
+    --text-color-dark: #3b2f2f;
+    --text-color-light: #6c757d;
+    --background-color: #FFFFFF;
+    --light-bg: #f4f6f9;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+}
+
+/* --- Layout Container (Nội dung chính) --- */
+/* Thiết lập chiều rộng tối đa và căn giữa nội dung trong wrapper */
+.order-detail-page-container {
+    max-width: 1100px;
+    margin: 0; /* Quan trọng: Loại bỏ margin lớn để không chiếm chỗ sidebar */
+    padding: 0; /* Sử dụng padding của .page-content-wrapper */
+}
+
+.page-title {
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.order-detail-content {
+    display: flex;
+    gap: 25px; /* Giảm khoảng cách một chút */
+}
+
+/* Cột sản phẩm và tiến trình */
+.column-left {
+    flex: 2.2; /* Tăng nhẹ độ rộng cột trái */
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Cột tóm tắt và thanh toán */
+.column-right {
+    flex: 1; /* Chiếm 1/3 không gian còn lại */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- 1. Tiến trình Đơn hàng (Steps) --- */
+.order-progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 0 10px;
+}
+
+.order-progress-container::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.progress-step {
+    position: relative;
+    z-index: 2;
+    background-color: var(--background-color);
+    color: var(--text-color-light);
+    padding: 0;
+    font-size: 0.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 25%; /* Chia đều 4 bước */
+}
+
+.progress-step::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+}
+
+.progress-step.current {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.progress-step.current::after {
+    background-color: var(--primary-color);
+    width: 12px;
+    height: 12px;
+}
+/* Các bước đã hoàn thành cũng nên dùng primary-color */
+.progress-step.completed::after {
+    background-color: var(--primary-color);
+}
+
+
+/* --- 2. Thông tin Mã & Ngày Đặt --- */
+.order-info-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-id, .order-date {
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+}
+.order-id .id-value {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.order-date .date-value {
+    font-weight: normal;
+}
+
+.status-tag {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--success-color);
+}
+
+/* --- 3. Bảng Sản phẩm --- */
+.order-products-table {
+    margin-bottom: 25px;
+    /* Loại bỏ border tổng thể để làm giống hình ảnh */
+}
+
+.order-products-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.order-products-table thead {
+    background-color: var(--light-bg); /* Nền cho hàng tiêu đề */
+    border-radius: 4px;
+    overflow: hidden; /* Giúp bo góc cho hàng tiêu đề */
+}
+
+.order-products-table th,
+.order-products-table td {
+    padding: 12px 15px; /* Thêm padding ngang cho dễ nhìn */
+    text-align: left;
+}
+
+.order-products-table thead th {
+    color: var(--text-color-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-bottom: none; /* Bỏ border dưới tiêu đề */
+}
+.order-products-table tbody td {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color-dark);
+}
+.order-products-table tbody tr:last-child td {
+    border-bottom: none; /* Bỏ border dưới hàng cuối cùng */
+}
+
+/* Định dạng cột (Adjusted padding/alignment) */
+.order-products-table th:nth-child(1), .order-products-table td:nth-child(1) { width: 50%; padding-left: 15px; }
+.order-products-table th:nth-child(2), .order-products-table td:nth-child(2) { width: 15%; text-align: left; color: var(--text-color-light); }
+.order-products-table th:nth-child(3), .order-products-table td:nth-child(3) { width: 15%; text-align: center; }
+.order-products-table th:nth-child(4), .order-products-table td:nth-child(4) { width: 20%; text-align: right; padding-right: 15px; }
+
+.product-name-col {
+    font-weight: 500;
+}
+
+.amount {
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.btn-primary-outline {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 15px; /* Giảm nhẹ padding button */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.btn-primary-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- Cột Phải: Summary Boxes --- */
+.summary-box {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--background-color);
+    height: fit-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.box-title {
+    font-size: 1.1rem;
+    color: var(--text-color-dark);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 700;
+}
+
+.summary-line, .detail-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.summary-line span:first-child, .detail-line span:first-child {
+    color: var(--text-color-light);
+}
+
+.summary-value, .detail-value {
+    font-weight: 600;
+    color: var(--text-color-dark);
+    text-align: right;
+}
+
+.summary-line.discount .summary-value {
+    color: #e3342f; /* Màu đỏ */
+}
+
+.summary-line.total-line, .detail-line.total-line {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.summary-total-value {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.payment-detail .transaction-id {
+    color: var(--secondary-color);
+}/* Trong file homepage_admin.css, hoặc file layout chính */
+
+.page-content-wrapper {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--light-bg);
+
+    margin-left: var(--sidebar-width);
+
+}
+/*.progress-step.current {*/
+/*    margin-top: 40px;*/
+/*}*/
+/*.progress-step.current::after{*/
+/* */
+/*}*/
+/* --- 1. Tiến trình Đơn hàng (Steps) --- */
+.order-progress-container {
+    display: flex;
+    justify-content: space-between;
+    /* CĂN CHỈNH: Đặt căn chỉnh theo top và đảm bảo chiều cao */
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 0 10px;
+    height: 50px; /* Đảm bảo đủ không gian cho text và chấm tròn */
+}
+
+/* Thanh ngang (đường kẻ) */
+.order-progress-container::before {
+    content: '';
+    position: absolute;
+    /* Đặt thanh ngang ở vị trí Y = 25px */
+    /*top: 40px;*/
+    /*left: 20px;*/
+    /*right: 20px;*/
+    /*height: 3px;*/
+    background-color: var(--border-color);
+    z-index: 1;
+
+}
+
+.progress-step {
+    position: relative;
+    z-index: 2;
+    background-color: var(--background-color);
+    color: var(--text-color-light);
+    font-size: 0.8rem;
+    text-align: center;
+    width: 25%;
+    /* CĂN CHỈNH: Đảm bảo text nằm phía trên */
+    padding-top: 40px; /* Đẩy text lên trên để tạo không gian cho chấm tròn */
+    display: block;
+}
+
+/* Chấm tròn */
+.progress-step::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--border-color);
+    border-radius: 50%;
+    position: absolute;
+    /* CĂN CHỈNH: Đặt vị trí Y = 25px, trùng với thanh ngang */
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Đảm bảo tâm chấm tròn nằm trên thanh ngang */
+}
+
+/* Trạng thái hiện tại */
+.progress-step.current {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.progress-step.current::after {
+    background-color: var(--primary-color);
+    width: 12px;
+    height: 12px;
+}
+.progress-step.completed::after {
+    background-color: var(--primary-color);
+}
+/* ... CSS Khối 1 của bạn ... */
+
+/* ---------------- HEADER ---------------- */
+/* ... */
+.header-icons i:hover {
+    color: var(--primary-color);
+}
+
+.user-logo {
+    font-size: 1.4rem !important;
+}
+
+/* Dropdown Menu - CÁC QUY TẮC BẠN ĐÃ CUNG CẤP */
+.user-dropdown, .notification-dropdown, .gmail-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* Thêm con trỏ cho dễ nhìn */
+}
+
+.dropdown-content {
+    display: none; /* Đảm bảo nó ẩn mặc định */
+    position: absolute;
+    /* ... các thuộc tính khác của dropdown-content ... */
+    z-index: 1050; /* Tăng z-index */
+    right: 0;
+    top: calc(100% + 5px);
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 500px; /* Thêm max-height */
+}
+
+/* Định nghĩa lại các thuộc tính đặc biệt cho Notification/Gmail */
+.gmail-content, .notification-content {
+    min-width: 250px;
+    right: -10px;
+}
+/* Thêm Header cho Dropdown */
+.dropdown-header {
+    padding: 10px 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    display: block;
+    position: sticky; /* Để header dính khi cuộn */
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+}
+
+/* QUY TẮC HIỂN THỊ KHI HOVER */
+.user-dropdown:hover .dropdown-content,
+.notification-dropdown:hover .dropdown-content,
+.gmail-dropdown:hover .dropdown-content {
+    display: block;
+}

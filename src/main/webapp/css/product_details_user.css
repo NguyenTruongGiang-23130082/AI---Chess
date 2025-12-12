@@ -1,0 +1,836 @@
+:root {
+    --background-color: #FFFFFF;
+    --primary-color: #8B5E3C;       /* Màu nâu chính (ví dụ: border, màu nhấn Home Decor) */
+    --text-color: #3b2f2f;
+    --text-color2:#6b5743;
+    --btn-primary: #A56B43;         /* Màu nút 'Thêm vào giỏ hàng' */
+    --price-color: #A56B43;         /* Màu đỏ nổi bật cho Giá (thay thế #ee4d2d) */
+    --star-color: #EAB308;          /* Màu vàng sao */
+    --light-bg: #fcfcfc;            /* Nền nhẹ cho khu vực giá/đánh giá */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+/* ======================================================= */
+/* 1. PRODUCT DETAIL & GALLERY */
+/* ======================================================= */
+.product-detail {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 30px;
+    padding: 20px 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.product-gallery {
+    flex: 0 0 400px;
+    max-width: 400px;
+    margin-right: 30px;
+}
+
+.main-image {
+    height: 450px;
+    overflow: hidden;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    object-fit: cover;
+}
+
+.main-image img:hover {
+    transform: scale(1.02);
+}
+
+.thumb-list {
+    display: flex;
+    gap: 15px;
+    margin-top: 18px;
+    justify-content: flex-start;
+}
+
+.thumb-list img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    border: 2px solid transparent;
+    transition: 0.25s;
+    object-fit: cover;
+}
+
+.thumb-list img.active,
+.thumb-list img:hover {
+    opacity: 1;
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* ======================================================= */
+/* 2. PRODUCT INFO (RIGHT COLUMN) */
+/* ======================================================= */
+.product-info {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+/* --- ĐÁNH GIÁ & GIÁ (Rating & Price) --- */
+.rating-price-wrapper {
+    background-color: var(--light-bg);
+    padding: 10px 15px;
+    margin: 15px 0 20px 0;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rating {
+    font-size: 16px;
+    color: var(--star-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.rating i {
+    font-size: 20px;
+}
+.rating span {
+    font-size: 15px;
+    color: #757575;
+    margin-left: 8px;
+}
+
+.product-price-section {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.product-price {
+    font-size: 30px;
+    color: var(--price-color);
+    font-weight: 500;
+    margin-right: 10px;
+    margin: 0;
+}
+
+.discount {
+    background-color: var(--price-color);
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+/* --- BENEFIT LIST (Lợi ích sản phẩm) --- */
+.benefit-list {
+    list-style: none;
+    padding: 15px 0;
+    margin: 15px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.benefit-list li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: var(--text-color2);
+    line-height: 1.5;
+}
+
+/* --- OPTIONS (Màu sắc/Kích thước) --- */
+.product-options {
+    margin: 25px 0;
+}
+
+.color-select, .capacity-select {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.color-select p, .capacity-select p {
+    color: #757575;
+    font-size: 14px;
+    margin-bottom: 0; /* Đặt lại margin-bottom */
+    width: 100px;
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+.color-select .color {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,.09);
+    transition: 0.2s;
+}
+.color-select .denoccho{
+    background: #3b2f2f;
+}
+.color-select .nauhatde{
+    background: #6b5743;
+}
+.color-select .color:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.capacity-select button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 1px solid rgba(0,0,0,.09);
+    background: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: 0.25s;
+    font-size: 14px;
+}
+
+.capacity-select button.active,
+.capacity-select button:hover {
+    color: var(--price-color);
+    border-color: var(--price-color);
+    transform: translateY(-1px);
+}
+
+/* --- PURCHASE ACTIONS (Số lượng & Nút) --- */
+.purchase-actions {
+    margin-top: 25px;
+}
+
+.quantity-select {
+    margin-bottom: 25px;
+}
+
+.quantity-select p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.quantity-controls .qty-btn {
+    width: 35px;
+    height: 35px;
+    background: #f8f8f8;
+    border: 1px solid rgba(0,0,0,.09);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.quantity-controls input[type="number"] {
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.09);
+    margin: 0 -1px;
+    -moz-appearance: textfield;
+    font-size: 15px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.add-to-cart {
+    background-color: #fff;
+    color: var(--price-color);
+    border: 1px solid var(--price-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 15px;
+    box-shadow: none;
+    transition: 0.25s;
+}
+
+.buy-now {
+    background-color: var(--price-color);
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.25s;
+
+}
+
+/* ======================================================= */
+/* 3. DESCRIPTION & REVIEW SECTIONS */
+/* ======================================================= */
+.product-description-container,
+.review-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 35px 40px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.description-title,
+.review-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.description-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.description-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 20px 0 10px 0;
+}
+
+.description-content ul {
+    list-style: disc;
+    margin: 0 0 20px 20px;
+    padding-left: 10px;
+}
+
+.description-content li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-color2);
+    margin-bottom: 5px;
+}
+
+/* --- REVIEW SPECIFIC STYLES --- */
+.review-summary {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.score-box {
+    text-align: center;
+}
+
+.score-box .score {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--star-color);
+}
+
+.stars {
+    font-size: 24px;
+    margin: 8px 0;
+    color: var(--star-color);
+}
+
+.bar div {
+    height: 100%;
+    background: var(--star-color);
+    border-radius: 12px;
+}
+
+/* WRITE REVIEW BOX */
+.write-review-box {
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: var(--light-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.write-review-box textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-review-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 10px rgba(139, 94, 60, 0.4);
+}
+/* ... Giữ lại các style nhỏ khác của Review List/Gallery ... */
+/* --- REVIEW SECTION STYLES --- */
+.review-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.review-title {
+    font-size: 24px; /* Đã chỉnh lại size theo style cuối */
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+/* SUMMARY */
+.review-summary {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.score-box {
+    text-align: center;
+}
+
+.score-box .score {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--star-color);
+}
+
+.stars {
+    font-size: 24px;
+    margin: 8px 0;
+    color: var(--star-color);
+}
+
+.stars.small {
+    font-size: 16px;
+}
+
+.score-bars {
+    flex-grow: 1;
+}
+
+.bar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 6px 0;
+}
+
+.bar-item span {
+    width: 60px;
+    font-size: 14px;
+}
+
+.bar {
+    flex-grow: 1;
+    height: 8px;
+    background: #eee;
+    border-radius: 12px;
+}
+
+.bar div {
+    height: 100%;
+    background: var(--star-color);
+    border-radius: 12px;
+}
+
+/* GALLERY */
+.review-sub-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.review-gallery {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.review-gallery img {
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* FILTER */
+.review-filter {
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.review-filter select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+/* REVIEW LIST */
+.review-item {
+    padding: 25px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.review-user {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.review-user .avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.review-text {
+    margin: 10px 0 15px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.review-imgs img {
+    width: 260px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* WRITE REVIEW BOX */
+.write-review-box {
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: var(--light-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.rating-selection {
+    font-size: 32px;
+    color: #ccc;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.write-review-box textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: 'sans-serif';
+    font-size: 16px;
+    line-height: 1.5;
+    transition: border-color 0.3s;
+}
+
+.write-review-box textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-review-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 10px rgba(139, 94, 60, 0.4);
+}
+/* --- TÙY CHỌN MÀU SẮC (ĐÃ SỬA THÀNH NÚT HÌNH CHỮ NHẬT) --- */
+.color-select {
+    /* Đảm bảo flex để căn chỉnh label và tùy chọn */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Label (Màu Sắc) */
+.color-select p {
+    color: #757575;
+    font-size: 14px;
+    margin-bottom: 0;
+    width: 100px; /* Cố định chiều rộng label */
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+/* Style cho các nút chọn màu */
+.color-select .color-btn {
+    margin-right: 10px;
+    padding: 10px 18px;
+    border: 1px solid #aaa;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 8px; /* Giữ bo góc giống nút kích thước */
+    transition: 0.25s;
+    font-size: 15px;
+    color: var(--text-color); /* Màu chữ mặc định */
+}
+
+/* Style cho nút màu đang được chọn */
+.color-select .color-btn.active,
+.color-select .color-btn:hover {
+    /* Áp dụng màu nền/viền nổi bật khi được chọn hoặc hover */
+    background: var(--price-color); /* Sử dụng màu đỏ nổi bật làm màu nền */
+    color: #fff; /* Màu chữ trắng khi nút được tô màu */
+    border-color: var(--price-color);
+    box-shadow: 0 2px 6px rgba(var(--price-color), 0.3);
+}
+
+/* --- TÙY CHỌN KÍCH THƯỚC (Giữ nguyên style) --- */
+.capacity-select button {
+    margin-right: 10px;
+    padding: 10px 18px;
+    border: 1px solid #aaa;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.25s;
+    font-size: 15px;
+}
+
+/* Đảm bảo style kích thước đang chọn vẫn là màu đỏ nổi bật */
+.capacity-select button.active,
+.capacity-select button:hover {
+    color: var(--price-color);
+    border-color: var(--price-color);
+    /* Giữ nguyên background là trắng nếu bạn muốn chỉ viền màu đỏ nổi bật */
+    background: #fff;
+}
+/* --- CSS MỚI: Đảm bảo nhãn và ô controls nằm trên một hàng --- */
+.quantity-row {
+    display: flex; /* Dùng flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.quantity-select p {
+    /* Nhãn "Số Lượng:" */
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px; /* Khoảng cách giữa nhãn và ô controls */
+    margin-bottom: 0; /* Quan trọng: Bỏ margin-bottom cũ để không bị đẩy controls xuống */
+}
+
+/* Các style cho bộ điều khiển (giữ nguyên nhưng đảm bảo không bị lỗi) */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+/* ... giữ các style chi tiết cho .qty-btn và input[type="number"] như đã gửi trước ... */
+/*mau*/
+/* --- TÙY CHỌN MÀU SẮC (CHỈNH SỬA MÀU NỀN & HOVER VIỀN) --- */
+.color-select {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Label (Màu Sắc) */
+.color-select p {
+    color: #757575;
+    font-size: 14px;
+    margin-bottom: 0;
+    width: 100px;
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+/* Style chung cho tất cả các nút màu */
+.color-select .color-btn {
+    margin-right: 10px;
+    padding: 6px 12px; /* ĐÃ GIẢM KÍCH THƯỚC ĐỆM */
+    border: 1px solid #aaa;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.25s;
+    font-size: 15px;
+    color: #fff; /* Màu chữ trắng để nổi bật trên nền đậm */
+    font-weight: 500;
+}
+
+/* 1. Định nghĩa Màu Nền Cụ Thể (Quan trọng) */
+/* Màu Đen Óc Chó */
+.color-select .color-btn[data-color="denoccho"] {
+    background: #3b2f2f; /* Màu Đen Óc Chó */
+
+}
+
+/* Màu Nâu Hạt Dẻ */
+.color-select .color-btn[data-color="nauhatde"] {
+    background: #6b5743; /* Màu Nâu Hạt Dẻ */
+}
+
+
+
+/* 3. Hiệu ứng ACTIVE (Nút đang được chọn) */
+.color-select .color-btn.active {
+    /* Giữ viền chính 1px, dùng box-shadow để tạo viền ngoài */
+    border: 1px solid var(--primary-color);
+
+    /* Box Shadow mô phỏng viền kép:
+       1. Viền trắng 2px (tạo khoảng cách)
+       2. Viền nâu 3px (viền ngoài cùng) */
+    box-shadow: 0 0 0 2px #fff,  /* Viền trắng mỏng bên trong */
+    0 0 0 3px var(--primary-color); /* Viền nâu dày bên ngoài */
+}
+/* --- 1. ĐỊNH DẠNG FORM NHẬP LIỆU TRONG LIST (WRITE-REVIEW-FORM) --- */
+
+.review-item.write-review-form {
+    padding: 25px; /* Tăng padding để tạo khoảng trống */
+    margin-bottom: 30px; /* Tạo khoảng cách với review item tiếp theo */
+    border: 2px solid var(--primary-color); /* Viền màu nâu để nổi bật */
+    border-radius: 12px;
+    background-color: var(--light-bg); /* Màu nền nhẹ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Ẩn timestamp (3 tuần trước) vì đây là form nhập liệu */
+.review-item.write-review-form .time {
+    display: none;
+}
+
+/* Định dạng ngôi sao trong form */
+.review-item.write-review-form .rating-selection {
+    justify-content: flex-start; /* Căn lề trái */
+    font-size: 24px; /* Kích thước sao lớn hơn */
+    margin-bottom: 0;
+}
+
+/* 2. STYLE CHO TEXTAREA (THAY CHO review-text) */
+.review-input {
+    width: 100%;
+    min-height: 80px; /* Chiều cao vừa phải */
+    padding: 10px;
+    margin: 15px 0; /* Khoảng cách trên và dưới */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 15px;
+    font-family: inherit; /* Kế thừa font chữ của body */
+}
+.review-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* 3. STYLE CHO NÚT GỬI */
+.review-item.write-review-form .submit-review-button {
+    /* Đảm bảo nút được căn lề phải */
+    display: block;
+    margin-left: auto;
+
+    /* Style nút gửi (giữ nguyên style từ trước) */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+/* --- DÒNG NOTE DƯỚI FORM ĐÁNH GIÁ --- */
+
+.review-note {
+    font-size: 13px;
+    color: #cc3300; /* Màu đỏ hoặc màu cam để cảnh báo/nhấn mạnh */
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-style: italic; /* In nghiêng cho dễ đọc */
+}
+
+/* Đảm bảo nó không bị lỗi khi nằm trong div nhỏ */
+.review-item.write-review-form .review-user > div {
+    /* Đã thiết lập block ở câu trả lời trước, nên style này đã ổn */
+    display: block;
+}
+.buy-now:hover{
+    background: var(--primary-color);
+}

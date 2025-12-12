@@ -1,0 +1,802 @@
+/* mypage_style.css - Đã cập nhật cho Dropdown, Thẻ thanh toán và Đơn hàng */
+
+:root {
+    --background-color: #FFFFFF;
+    --primary-color: #8B5E3C; /* Màu chính: Nút, viền active, icon */
+    --text-color: #3b2f2f; /* Màu chữ chính */
+    --text-color2: #6b5743; /* Màu chữ phụ/mờ */
+    --btn: #A56B43; /* Màu hover của nút */
+    --delete-color: #800000; /* Màu đỏ cho hành động xóa */
+    --success-color: #52c41a; /* Màu xanh lá cho trạng thái thành công */
+    --order-total-color: #007bff; /* Màu xanh dương cho Tổng thanh toán (theo mẫu) */
+}
+
+/* Tổng thể Dashboard */
+.dashboard-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+}
+
+/* --- Sidebar (Menu bên trái) --- */
+.sidebar {
+    width: 250px;
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.avatar-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.menu-link i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Icon toggle (mũi tên) cho Dropdown */
+.toggle-icon {
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+    margin-right: 0 !important;
+}
+
+/* Xoay mũi tên khi menu active */
+.menu-item-dropdown.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Nền active cho các tab (mục con và mục cấp 1) */
+.menu-list .tab-link.active {
+    background-color: #f7f3f0;
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Nội dung Dropdown */
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    border-left: 2px solid #ccc;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    /* Cấu hình cho hiệu ứng trượt */
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+/* Khi dropdown không active, ẩn đi */
+.menu-item-dropdown:not(.active) .dropdown-content {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+
+.dropdown-content a {
+    padding: 8px 10px;
+    text-decoration: none;
+    color: var(--text-color2);
+}
+
+/* --- Main Content (Nội dung chính) --- */
+.main-content {
+
+    flex-grow: 1;
+    padding-left: 40px;
+}
+
+.tab-content {
+
+    display: none;
+    width: 100%;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.main-content h2 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.main-content h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: var(--text-color2);
+}
+
+.subtitle {
+    color: var(--text-color2);
+    margin-bottom: 30px;
+}
+
+/* --- Hồ sơ (Profile) --- */
+.profile-container {
+    display: flex;
+    gap: 40px;
+}
+
+.profile-left {
+    width: 60%;
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+
+.profile-right {
+    width: 40%;
+}
+
+.avatar-edit {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+}
+
+.main-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ccc;
+}
+
+.camera-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    width: 120px;
+    font-weight: bold;
+    color: var(--text-color2);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    margin-right: 15px;
+    width: auto;
+}
+
+.date-select select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.link-item i {
+    margin-right: 10px;
+    font-size: 1.2em;
+    width: 20px;
+    color: var(--text-color);
+}
+
+.update-btn, .link-btn, .delete-btn, .save-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.update-btn, .link-btn {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+.save-btn{
+    background: var(--primary-color);
+    color: var(--background-color);
+    width: 100px;
+
+}
+.save-btn:hover{
+    background: var(--btn);
+    color: #fff;
+}
+.update-btn:hover, .link-btn:hover {
+color: var(--btn);
+}
+
+.delete-btn {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+.delete-btn:hover{
+    color: var(--btn);
+}
+/* --- Thanh toán (Payment) --- */
+.payment-management {
+    margin-top: 20px;
+}
+
+.payment-management .add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    float: right;
+}
+
+.payment-management .add-btn:hover {
+    background-color: var(--btn);
+}
+
+.card-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    display: inline-block;
+    width: 350px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-display {
+    /* Tạo hình ảnh thẻ theo mẫu */
+    background: linear-gradient(135deg, #f7f3f0 0%, #fff 50%, #e6e0db 100%);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 60px;
+}
+
+.card-display .visa-logo {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    border: none;
+}
+
+.card-actions button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.default-btn {
+    background-color: #f7f3f0;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.edit-btn {
+    background-color: #f0f0f0;
+}
+
+/* --- Địa chỉ (Address) --- */
+.float-right {
+    float: right;
+    margin-bottom: 20px;
+    background: var(--primary-color);
+    color: #fff;
+    width: 100px;
+    height: 30px;
+
+}
+
+.address-list {
+    clear: both;
+}
+
+.address-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.address-icon {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-right: 20px;
+    width: 30px;
+    text-align: center;
+}
+
+.address-details {
+    flex-grow: 1;
+}
+
+.address-name span {
+    font-weight: normal;
+    color: var(--text-color2);
+    margin-left: 10px;
+}
+
+.default-tag {
+    background-color: #f7f3f0;
+    color: var(--primary-color);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-right: 15px;
+}
+
+.address-actions button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.change-btn {
+    background: none;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.change-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.set-default-btn {
+    background: none;
+    color: var(--text-color2);
+    border: 1px solid #ccc;
+}
+
+.address-item:first-child .address-actions .set-default-btn {
+    display: none;
+}
+
+/* --- Bảo mật (Security) --- */
+.password-change-form {
+    max-width: 500px;
+}
+
+.password-change-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.password-change-form .form-group label {
+    width: auto;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.password-change-form .form-group input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.required {
+    color: var(--delete-color);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 40px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.password-requirements {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.password-requirements h4 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.password-requirements ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--text-color2);
+}
+
+/* --- Đơn hàng (Orders) --- */
+
+.order-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 15px 0;
+    background-color: #f8f8f8;
+}
+
+.summary-box {
+    text-align: center;
+    padding: 0 30px;
+}
+
+.summary-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.summary-label {
+    color: var(--text-color2);
+}
+
+.summary-separator {
+    font-size: 3em;
+    color: #ccc;
+    line-height: 1;
+    margin: 0 20px;
+}
+
+/* Căn giữa nhóm nút tab */
+.order-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-tab {
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-color2);
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+.order-tab.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: bold;
+}
+.order-item {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-info {
+    display: flex;
+    /* Tăng cường độ chiếm không gian để thông tin bên trong có đủ chỗ */
+    flex-grow: 1.5;
+    margin: 0 20px 0 0; /* Thêm margin phải để tách biệt với cột Tổng tiền */
+}
+
+.product-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 20px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-name {
+    font-weight: normal;
+    margin-bottom: 8px; /* Tăng khoảng cách dưới tên sản phẩm */
+    line-height: 1.3;
+    font-size: 1.1em;
+}
+
+/* Các dòng chi tiết sản phẩm (Màu, Kích thước, Số lượng) */
+.product-spec-item {
+    margin: 3px 0; /* Khoảng cách giữa các dòng */
+    font-size: 0.9em;
+    color: var(--text-color);
+    /* Đảm bảo mỗi mục chiếm hết chiều rộng và xuống dòng */
+    display: block;
+}
+
+/* In đậm nhãn (Màu Sắc:, Kích thước:, Số lượng:) */
+.product-spec-item span {
+    font-weight: bold;
+    color: var(--text-color2);
+    margin-right: 5px;
+    display: inline-block;
+    /* Dùng width cố định cho label để căn thẳng hàng (optional) */
+    /* width: 80px; */
+}
+
+.delivery-status {
+    background-color: #fff;
+    color: var(--success-color);
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.9em;
+    display: inline-block;
+    margin-right: 0;
+    margin-top: 10px; /* Tách biệt với chi tiết sản phẩm */
+}
+
+.order-total {
+    text-align: right;
+    flex-shrink: 0;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.order-date {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.order-total p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #DC143C;
+    margin-bottom: 15px;
+    white-space: nowrap;
+}
+
+/* Nhóm nút hành động */
+.order-actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.view-details-btn, .support-btn {
+    width: 120px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.view-details-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.view-details-btn:hover {
+    background-color: var(--btn);
+}
+
+.support-btn {
+    background: none;
+    border: 1px solid #ccc;
+    color: var(--text-color2);
+}
+
+.support-btn:hover {
+    background-color: #f0f0f0;
+}
+.product-color{
+    margin-bottom: 8px;
+}
+.product-size{
+    margin-bottom: 8px;
+}
+.product-name{
+    margin-top: 7px;
+}
+/* --- Nội dung chính: Thêm đường kẻ dưới tiêu đề H2 --- */
+
+.main-content h2 {
+    font-size: 2em;
+    margin-top: 0; /* Đảm bảo không có margin trên quá lớn */
+    margin-bottom: 15px; /* Giảm margin dưới để sát với đường kẻ */
+    color: var(--text-color);
+
+    /* DÒNG CSS CẦN THÊM/CHỈNH SỬA: */
+    border-bottom: 1px solid #e0e0e0; /* Đường kẻ xám nhạt */
+    padding-bottom: 10px; /* Khoảng cách giữa chữ và đường kẻ */
+}
+/* Điều chỉnh cho đoạn mô tả (subtitle) trong Hồ sơ */
+.subtitle {
+    color: var(--text-color2);
+    /* Giảm khoảng cách để subtitle sát với nội dung form bên dưới */
+    margin-bottom: 20px;
+}
+/* --- CSS MỚI: Định dạng tiêu đề với nút "Thêm" --- */
+
+/* Wrapper chứa tiêu đề và nút */
+.header-with-button {
+    display: flex;
+    justify-content: space-between; /* Đẩy hai phần tử ra hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 20px; /* Khoảng cách với danh sách bên dưới */
+
+    /* Áp dụng đường kẻ ngang dưới header-with-button */
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Tinh chỉnh tiêu đề H2 trong wrapper */
+.header-with-button h2 {
+    /* Hủy bỏ border-bottom cũ trên H2 để tránh 2 đường kẻ */
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0; /* Xóa margin dưới để căn giữa tốt hơn */
+}
+
+/* Loại bỏ class float-right không cần thiết và chỉnh lại nút thêm chung */
+.add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    /* Đảm bảo style chung cho nút Thêm */
+}
+
+.add-btn:hover {
+    background-color: var(--btn);
+}
+
+/* Xóa CSS cũ cho nút "Thêm" ở Địa chỉ */
+.float-right {
+    /* Hủy bỏ đoạn CSS cũ này nếu nó vẫn còn trong file mypage_style.css */
+    /* float: right;
+       margin-bottom: 20px;
+       background: var(--primary-color);
+       color: #fff;
+       width: 100px;
+       height: 30px;
+    */
+}
+
+/* --- Tinh chỉnh .payment-management (cần bỏ float: right) --- */
+/* Vì nút "Thêm" ở Thanh toán cũng sẽ dùng style mới này,
+   bạn nên kiểm tra lại .payment-management trong file CSS của mình: */
+.payment-management {
+    margin-top: 20px;
+    /* Xóa float: right và thay bằng header-with-button */
+}
+
+/* Sửa nút Thêm cũ trong payment-management để dùng style chung */
+.payment-management .add-btn {
+    /* Xóa float: right khỏi đây nếu có */
+    /* float: right; */
+    margin-bottom: 0; /* Đảm bảo không có margin dưới thừa */
+}
+button{
+    font-size: 14px;
+}
+/* --- Bảo mật (Security) --- */
+.password-change-form {
+    max-width: 500px;
+    /* DÒNG CSS CẦN THÊM/CHỈNH SỬA: */
+    margin: 0 auto; /* Căn giữa khối có giới hạn chiều rộng */
+}
+
+/* Các style khác giữ nguyên */
+.password-change-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* ... các style khác của form ... */

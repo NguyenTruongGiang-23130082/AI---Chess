@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME DECOR - TRANG CỦA TÔI</title>
+    <link rel="icon" type="image/png"  href="../img/logo.png" class="lo">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/homepage_style.css">
+    <link rel="stylesheet" href="../css/mypage_style.css">
+</head>
+<body>
+
+<div id="header">
+    <div id="logo"><img src="../img/logo.png" class="image"/>
+        <div class="brand"> <div id="name-web">HOME DECOR</div>
+            <div id="sub-slogan">Nét mộc trong từng góc nhỏ</div></div>
+    </div>
+
+    <nav class="menu-bar">
+
+        <a class="menu" id="home" href="../homepage_user.jsp"> TRANG CHỦ</a>
+        <div class="menu product-menu">
+            <a id="product" href="product_all_user.html">SẢN PHẨM</a>
+            <div class="submenu">
+                <a href="decorate_livingroom_user.html">TRANG TRÍ PHÒNG KHÁCH</a>
+                <a href="decorate_bedroom_user.html">TRANG TRÍ PHÒNG NGỦ</a>
+                <a href="decorate_kitchen_user.html">TRANG TRÍ PHÒNG BẾP</a>
+                <a href="decorate_homeoffice_user.html">TRANG TRÍ PHÒNG LÀM VIỆC</a>
+                <a href="decorate_miniitem_user.html">ĐỒ TRANG TRÍ MINI</a>
+                <a href="souvenirs_user.html">QUÀ LƯU NIỆM</a>
+            </div>
+        </div>
+        <a class="menu" id=" " href="purchasing_policy_user.html" >CHÍNH SÁCH MUA HÀNG</a>
+
+        <a class="menu" id="introduce" href="introduce_user.html" >GIỚI THIỆU</a>
+        <a class="menu" id="contact" href="contact_user.html">LIÊN HỆ</a>
+
+
+    </nav>
+    <div class="icons">
+        <a class="nav_item" href="shopping-cart.html" id="cart-link" >
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+
+        <a class="nav-item" href="search.html" id="search-link">
+            <i class="fas fa-search"></i>
+        </a>
+
+        <div class="user-login">
+            <i class="fas fa-user"></i>
+            <div class="user">
+                <a class="nav_item" href="mypage_user.html" id="login">Trang của tôi</a>
+                <a class="nav-item" href="homepage.html" id="register">Đăng xuất</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="dashboard-container">
+
+    <div class="sidebar">
+        <div class="user-info">
+            <div class="avatar-container">
+                <img src="https://i.pinimg.com/474x/f1/7a/28/f17a28e82524a427ea89fd3c1b5f9266.jpg" alt="Avatar" class="avatar-img"/>
+            </div>
+            <div class="user-name">Trần Thị Thúy Kiều</div>
+        </div>
+
+        <div class="menu-list">
+            <div class="menu-item-dropdown active" id="tai-khoan-menu">
+                <a href="#" class="menu-link dropdown-toggle">
+                    <i class="fas fa-user"></i> Tài Khoản
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#" class="tab-link active" data-tab="ho-so"><i class="fas fa-id-card"></i> Hồ sơ</a>
+                    <a href="#" class="tab-link" data-tab="thanh-toan"><i class="fas fa-credit-card"></i> Thanh toán</a>
+                    <a href="#" class="tab-link" data-tab="dia-chi"><i class="fas fa-map-marker-alt"></i> Địa chỉ</a>
+                    <a href="#" class="tab-link" data-tab="bao-mat"><i class="fas fa-shield-alt"></i> Bảo mật</a>
+                    <a href="#" class="tab-link" data-tab="thong-bao"><i class="fas fa-bell"></i> Thông báo</a>
+                </div>
+            </div>
+            <a href="#" class="tab-link menu-link" data-tab="don-hang"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+            <a href="#" class="tab-link menu-link" data-tab="tin-nhan"><i class="fas fa-comment-dots"></i> Tin nhắn</a>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div id="ho-so" class="tab-content active">
+            <h2>Hồ sơ</h2>
+            <p class="subtitle">Quản lý thông tin hồ sơ để giữ an toàn cho tài khoản của bạn</p>
+            <div class="profile-container">
+                <div class="profile-left">
+                    <div class="avatar-edit">
+                        <img src="https://i.pinimg.com/474x/f1/7a/28/f17a28e82524a427ea89fd3c1b5f9266.jpg" alt="Avatar" class="main-avatar"/>
+                        <button class="camera-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="form-group">
+                        <label for="ho-ten">Họ và Tên :</label>
+                        <input type="text" id="ho-ten" value="Trần Thị Thúy Kiều">
+                    </div>
+                    <div class="form-group">
+                        <label for="ten-hien-thi">Tên hiển thị :</label>
+                        <input type="text" id="ten-hien-thi" value="Baby cute">
+                    </div>
+                    <div class="form-group">
+                        <label>Giới tính :</label>
+                        <div class="radio-group">
+                            <input type="radio" id="nam" name="gioi-tinh" value="Nam" >
+                            <label for="nam">Nam</label>
+                            <input type="radio" id="nu" name="gioi-tinh" value="Nữ" checked>
+                            <label for="nu">Nữ</label>
+                            <input type="radio" id="khac" name="gioi-tinh" value="Khác">
+                            <label for="khac">Khác</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày sinh :</label>
+                        <div class="date-select">
+                            <select><option>Ngày</option></select>
+                            <select><option>Tháng</option></select>
+                            <select><option>Năm</option></select>
+                        </div>
+                    </div>
+                    <button class="save-btn">Lưu</button>
+                </div>
+                <div class="profile-right">
+                    <h3>Thông tin liên hệ</h3>
+                    <div class="contact-item">
+                        <span>0399989979</span>
+                        <button class="update-btn">Cập nhật</button>
+                    </div>
+                    <div class="contact-item">
+                        <span>babycute1234@gmail.com</span>
+                        <button class="update-btn">Cập nhật</button>
+                    </div>
+
+                    <h3>Liên kết</h3>
+                    <div class="contact-item link-item">
+                        <i class="fab fa-facebook-square"></i>
+                        <span>Facebook</span>
+                        <button class="link-btn">Liên kết</button>
+                    </div>
+                    <div class="contact-item link-item">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                        <button class="delete-btn">Xóa</button>
+                    </div>
+                    <div class="contact-item link-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Zalo</span>
+                        <button class="delete-btn">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="thanh-toan" class="tab-content">
+            <div class="header-with-button">
+
+            <h2>Quản lý thanh toán</h2>
+            <button class="add-btn"><i class="fas fa-plus"></i> Thêm</button>
+            </div>
+            <div class="payment-management">
+
+                <div class="card-item">
+                    <div class="card-display">
+                        <p class="card-number">Số thẻ: **** **** **** 9999</p>
+                        <p class="card-name">TRAN THI THUY KIEU</p>
+                        <p class="card-date">Date: 31/12/2016</p>
+                        <img src="https://i.pinimg.com/474x/f1/7a/28/f17a28e82524a427ea89fd3c1b5f9266.jpg" alt="VISA" class="visa-logo">
+                    </div>
+                    <div class="card-actions">
+                        <button class="default-btn">Mặc định</button>
+                        <button class="edit-btn">Sửa</button>
+                        <button class="delete-btn">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dia-chi" class="tab-content">
+            <div class="header-with-button">
+            <h2>Địa Chỉ</h2>
+            <button class="add-btn float-right"><i class="fas fa-plus"></i> Thêm</button>
+            </div>
+            <div class="address-list">
+                <div class="address-item default-address">
+                    <div class="address-icon"><i class="fas fa-home"></i></div>
+                    <div class="address-details">
+                        <p class="address-name">Trần Thị Thúy Kiều <span>0399999970</span></p>
+                        <p class="address-line">Thủ Đức, TP.HCM</p>
+                    </div>
+                    <div class="address-actions">
+                        <span class="default-tag">Mặc định</span>
+                        <button class="change-btn">Thay đổi</button>
+                        <button class="set-default-btn">Đặt làm mặc định</button>
+                        <button class="delete-btn">Xóa</button>
+                    </div>
+                </div>
+                <div class="address-item">
+                    <div class="address-icon"><i class="fas fa-building"></i></div>
+                    <div class="address-details">
+                        <p class="address-name">Trần Thị Thúy Kiều <span>0399999970</span></p>
+                        <p class="address-line">Thủ Đức, TP.HCM</p>
+                    </div>
+                    <div class="address-actions">
+                        <button class="set-default-btn">Đặt làm mặc định</button>
+
+                        <button class="change-btn">Thay đổi</button>
+                        <button class="delete-btn">Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bao-mat" class="tab-content">
+            <h2>Mật khẩu</h2>
+            <h3>Đổi mật khẩu</h3>
+            <div class="password-change-form">
+                <div class="form-group">
+                    <label for="current-pass">Mật khẩu hiện tại <span class="required">*</span></label>
+                    <input type="password" id="current-pass">
+                    <i class="fas fa-eye password-toggle"></i>
+                </div>
+                <div class="form-group">
+                    <label for="new-pass">Mật khẩu mới <span class="required">*</span></label>
+                    <input type="password" id="new-pass">
+                    <i class="fas fa-eye password-toggle"></i>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-pass">Xác nhận mật khẩu <span class="required">*</span></label>
+                    <input type="password" id="confirm-pass">
+                    <i class="fas fa-eye password-toggle"></i>
+                </div>
+                <div class="password-requirements">
+                    <h4>Yêu cầu mật khẩu:</h4>
+                    <p>Đảm bảo các yêu cầu sau được đáp ứng:</p>
+                    <ul>
+                        <li>Tối thiểu 8 ký tự - càng dài càng tốt</li>
+                        <li>Ít nhất một ký tự viết thường</li>
+                        <li>Ít nhất một ký tự viết hoa</li>
+                        <li>Ít nhất một ký tự số, ký hiệu hoặc khoảng trắng</li>
+                    </ul>
+                </div>
+                <button class="save-btn float-right">Lưu</button>
+            </div>
+        </div>
+
+        <div id="don-hang" class="tab-content">
+            <h2>Đơn hàng</h2>
+            <div class="order-summary">
+                <div class="summary-box">
+                    <div class="summary-number">39</div>
+                    <div class="summary-label">Đơn hàng</div>
+                </div>
+                <div class="summary-separator">|</div>
+                <div class="summary-box">
+                    <div class="summary-number">198 Tr</div>
+                    <div class="summary-label">Tổng tiền tích lũy</div>
+                </div>
+            </div>
+
+            <div class="order-tabs">
+                <button class="order-tab active">Tất cả</button>
+                <button class="order-tab">Chờ xác nhận</button>
+                <button class="order-tab">Đã xác nhận</button>
+                <button class="order-tab">Đang vận chuyển</button>
+                <button class="order-tab">Đã giao hàng</button>
+                <button class="order-tab">Đã hủy</button>
+            </div>
+
+            <div class="order-list">
+                <div class="order-item">
+                    <div class="product-info">
+                        <img src="https://img.fantaskycdn.com/0f1a767c073a34847c39250e742128d2_2056x.webp" alt="Kệ trang trí bằng gỗ 3 tầng" class="product-img">
+                        <div class="product-details">
+                            <p class="product-name">Kệ trang trí bằng gỗ 3 tầng phong cách Bắc Âu</p>
+                            <div class="product-specs">
+                                <p class="product-color"><span>Màu Sắc:</span> Đen</p>
+                                <p class="product-size"><span>Kích thước:</span> 120x30x100 cm</p>
+                                <p class="quantity"><span>Số lượng:</span> 1</p>
+                            </div>
+                            <span class="delivery-status">Đã giao hàng</span>
+                        </div>
+                    </div>
+                    <div class="order-total">
+                        <div class="order-date">22/10/2024</div>
+                        <p>Tổng thanh toán: 1,250,000 VNĐ</p>
+                        <div class="order-actions-group">
+                            <button class="view-details-btn">Xem chi tiết</button>
+                            <button class="support-btn">Hỗ trợ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-item">
+                    <div class="product-info">
+                        <img src="https://i.pinimg.com/1200x/8c/cb/09/8ccb095fb47d80931a606406e3b11ebd.jpg" alt="Giá treo chậu cây bằng gỗ cao cấp" class="product-img">
+                        <div class="product-details">
+                            <p class="product-name">Giá treo chậu cây bằng gỗ cao cấp</p>
+                            <div class="product-specs">
+                                <p class="product-color"><span>Màu Sắc:</span> Nâu nhạt</p>
+                                <p class="product-size"><span>Kích thước:</span> D50 x C70 cm</p>
+                                <p class="quantity"><span>Số lượng:</span> 2</p>
+                            </div>
+                            <span class="delivery-status">Đã giao hàng</span>
+                        </div>
+                    </div>
+                    <div class="order-total">
+                        <div class="order-date">22/10/2024</div>
+                        <p>Tổng thanh toán: 900,000 VND</p>
+                        <div class="order-actions-group">
+                            <button class="view-details-btn">Xem chi tiết</button>
+                            <button class="support-btn">Hỗ trợ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="thong-bao" class="tab-content">
+            <h2>Thông báo</h2>
+            <p>Không có thông báo mới.</p>
+        </div>
+        <div id="tin-nhan" class="tab-content">
+            <h2>Tin nhắn</h2>
+            <p>Không có tin nhắn nào.</p>
+        </div>
+
+    </main>
+</div>
+
+<div class="footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>Về chúng tôi</h3>
+
+
+            <p>HOME DECOR</p>
+
+            <p><i class="fa-solid"></i> Địa chỉ: Trường Đại học Nông Lâm Thành phố Hồ Chí Minh</p>
+            <p><i class="fa-solid"></i> Số điện thoại: 0944459364</p>
+            <p><i class="fa-solid"></i> Email: 23130082@st.hcmuaf.edu.vn</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+
+
+        <div class="footer-col">
+            <h3>Chính sách</h3>
+            <a href="introduce_user.html">Về tụi mình</a>
+            <a href="purchasing_policy_user.html">Chính sách Thanh toán</a>
+            <a href="purchasing_policy_user.html">Chính sách Giao hàng</a>
+            <a href="purchasing_policy_user.html">Chính sách Đổi trả</a>
+        </div>
+
+
+        <div class="footer-col">
+            <h3>Hỗ trợ khách hàng</h3>
+            <a href="product_all_user.html">Tất cả sản phẩm</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Liên kiết nhanh</h3>
+            <a href="../homepage_user.jsp">Trang chủ</a>
+            <a href="purchasing_policy_user.html">Chính sách mua hàng</a>
+            <a href="introduce_user.html">Giới thiệu</a>
+            <a href="contact_user.html">Liên hệ</a>
+        </div>
+
+    </div>
+
+
+</div>
+<script src="../js/mypage_script.js"></script>
+</body>
+</html>

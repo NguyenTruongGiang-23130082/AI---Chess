@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME DECOR - CHI TIẾT ĐƠN HÀNG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/homepage_admin.css">
+    <link rel="stylesheet" href="../css/admin_order_datails.css">
+    <link rel="stylesheet" href="../css/admin_profile_style.css">
+</head>
+<body>
+
+<div class="admin-container">
+    <header class="header">
+        <div class="logo-placeholder">
+            <img src="../img/logo.png" alt="Logo Modern Homes">
+            <p class="logo">HOME DECOR</p>
+        </div>
+
+        <div class="header-icons">
+
+            <div class="gmail-dropdown">
+                <i class="fa-solid fa-envelope gmail-icon"></i>
+
+                <div id="gmailMenuContent" class="dropdown-content gmail-content">
+                    <div class="dropdown-header">Gmail</div>
+                    <p class="no-messages-text">Không có Gmail nào.</p>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Mở Gmail</a>
+                </div>
+            </div>
+            <div class="notification-dropdown">
+                <i class="fa-solid fa-bell notification-icon"></i>
+
+                <div id="notificationMenuContent" class="dropdown-content notification-content">
+                    <div class="dropdown-header">Thông Báo Mới (5)</div>
+                    <a href="#">Đơn hàng mới #1001</a>
+                    <a href="#">Sản phẩm hết hàng</a>
+                    <a href="#">Khách hàng mới đăng ký</a>
+                    <a href="#">Đơn hàng #1005 vừa được hủy bỏ</a>
+                    <a href="#">Cần duyệt 3 đánh giá sản phẩm mới</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Xem tất cả</a>
+                </div>
+            </div>
+
+            <div class="user-dropdown">
+                <i class="fas fa-user-circle user-logo" ></i>
+
+                <div id="userMenuContent" class="dropdown-content">
+                    <a href="admin_thong_tin_tai_khoan.html"> Thông tin tài khoản</a>
+                    <a href="admin_doi_mat_khau.html"> Đổi mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="logout-link"> Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li ><a href="../admin_homepage.jsp">Tổng quan</a></li>
+                    <li><a href="admin_products.html"> Sản phẩm</a></li>
+                    <li class="active"><a href="admin_order.html"> Đơn hàng</a></li>
+                    <li><a href="admin_customer.html"> Khách hàng</a></li>
+                    <li><a href="admin_profile.html"> Hồ sơ</a></li>
+                    <li><a href="admin_quan_ly_danh_muc.html"> Cài đặt</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="page-content-wrapper">
+            <div class="order-detail-page-container">
+                <h1 class="page-title">Chi Tiết Đơn Hàng</h1>
+
+                <div class="order-detail-content">
+
+                    <div class="column-left">
+
+                        <div class="order-progress-container">
+                            <div class="progress-step current">Đơn Hàng Đã Đặt</div>
+                            <div class="progress-step">Đã Đóng Gói</div>
+                            <div class="progress-step">Đã Giao Hàng</div>
+                            <div class="progress-step">Đã Giao Thành Công</div>
+                        </div>
+
+                        <div class="order-info-header">
+                            <p class="order-id">Mã Đơn Hàng: <span class="id-value">DU00017</span></p>
+                            <p class="order-date">Ngày Đặt Hàng: <span class="date-value">13/6/2024 - 14:50</span></p>
+                            <span class="status-tag success">Đã Thanh Toán</span>
+                        </div>
+
+                        <div class="order-products-table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Sản Phẩm</th>
+                                    <th>Mã SP</th>
+                                    <th>Số Lượng</th>
+                                    <th>Số Tiền</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="product-row">
+                                    <td class="product-name-col">Kệ giày sang trọng, kinh tế</td>
+                                    <td>SP 1</td>
+                                    <td>1</td>
+                                    <td class="amount">1,533,315 VNĐ</td>
+                                </tr>
+                                <tr class="product-row">
+                                    <td class="product-name-col">Tủ đựng đa năng làm bằng gỗ thông tự nhiên</td>
+                                    <td>SP 1</td>
+                                    <td>1</td>
+                                    <td class="amount">375,965 VNĐ</td>
+                                </tr>
+                                <tr class="product-row">
+                                    <td class="product-name-col">Giường gỗ chạm khắc tinh tế</td>
+                                    <td>SP 1</td>
+                                    <td>1</td>
+                                    <td class="amount">1,533,315 VNĐ</td>
+                                </tr>
+                                <tr class="product-row">
+                                    <td class="product-name-col">Bình hoa gỗ phong cách cổ điển</td>
+                                    <td>SP 1</td>
+                                    <td>1</td>
+                                    <td class="amount">1,063,315 VNĐ</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button class="btn-primary-outline">Hóa Đơn</button>
+
+                    </div>
+
+                    <div class="column-right">
+
+                        <div class="summary-box order-summary-detail">
+                            <h3 class="box-title">Tóm Tắt Đơn Hàng</h3>
+
+                            <div class="summary-line">
+                                <span>Tổng Phụ:</span>
+                                <span class="summary-value">7,990,000 VNĐ</span>
+                            </div>
+                            <div class="summary-line discount">
+                                <span>Giảm Giá (DIS15%):</span>
+                                <span class="summary-value negative-value">-1,198,500 VNĐ</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>Phí Vận Chuyển:</span>
+                                <span class="summary-value">352,500 VNĐ</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>Thuế VAT 19% (đã bao gồm):</span>
+                                <span class="summary-value">1,504,000 VNĐ</span>
+                            </div>
+
+                            <div class="summary-line total-line">
+                                <span>Tổng Số Tiền:</span>
+                                <span class="summary-total-value">8,644,000 VNĐ</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-box payment-detail">
+                            <h3 class="box-title">Chi Tiết Thanh Toán</h3>
+
+                            <div class="detail-line">
+                                <span>Giao Dịch:</span>
+                                <span class="detail-value transaction-id">#DU4444TO10000</span>
+                            </div>
+                            <div class="detail-line">
+                                <span>Phương Thức Thanh Toán:</span>
+                                <span class="detail-value">Thẻ Tín Dụng</span>
+                            </div>
+                            <div class="detail-line">
+                                <span>Chủ Thẻ:</span>
+                                <span class="detail-value">Baybi Kieu</span>
+                            </div>
+                            <div class="detail-line">
+                                <span>Số Thẻ:</span>
+                                <span class="detail-value">xxxx xxxx xxxx 6779</span>
+                            </div>
+
+                            <div class="detail-line total-line">
+                                <span>Tổng Số Tiền:</span>
+                                <span class="summary-total-value">8,644,000 VNĐ</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+</div>
+
+</body>
+</html>

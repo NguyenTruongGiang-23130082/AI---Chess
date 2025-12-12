@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME DECOR - QUẢN LÝ KHÁCH HÀNG</title>
+    <link rel="icon" type="image/png"  href="../img/logo.png" >
+    <link rel="stylesheet" href="../css/admin_customer_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin_profile_style.css">
+</head>
+<body>
+<div class="admin-container">
+    <header class="header">
+        <div class="logo-placeholder">
+            <img src="../img/logo.png" alt="Logo Modern Homes">
+            <p class="logo">HOME DECOR</p>
+        </div>
+        <div class="header-icons">
+
+            <div class="gmail-dropdown">
+                <i class="fa-solid fa-envelope gmail-icon"></i>
+
+                <div id="gmailMenuContent" class="dropdown-content gmail-content">
+                    <div class="dropdown-header">Gmail</div>
+                    <p class="no-messages-text">Không có Gmail nào.</p>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Mở Gmail</a>
+                </div>
+            </div>
+            <div class="notification-dropdown">
+                <i class="fa-solid fa-bell notification-icon"></i>
+
+                <div id="notificationMenuContent" class="dropdown-content notification-content">
+                    <div class="dropdown-header">Thông Báo Mới (5)</div>
+                    <a href="#">Đơn hàng mới #1001</a>
+                    <a href="#">Sản phẩm hết hàng</a>
+                    <a href="#">Khách hàng mới đăng ký</a>
+                    <a href="#">Đơn hàng #1005 vừa được hủy bỏ</a>
+                    <a href="#">Cần duyệt 3 đánh giá sản phẩm mới</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="view-all-link">Xem tất cả</a>
+                </div>
+            </div>
+
+            <div class="user-dropdown">
+                <i class="fas fa-user-circle user-logo" ></i>
+
+                <div id="userMenuContent" class="dropdown-content">
+                    <a href="admin_thong_tin_tai_khoan.html"> Thông tin tài khoản</a>
+                    <a href="admin_doi_mat_khau.html"> Đổi mật khẩu</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="logout-link"> Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../admin_homepage.jsp">Tổng quan</a></li>
+                    <li><a href="admin_products.html"> Sản phẩm</a></li>
+                    <li><a href="admin_order.html"> Đơn hàng</a></li>
+                    <li class="active"><a href="#"> Khách hàng</a></li>
+                    <li><a href="admin_profile.html"> Hồ sơ</a></li>
+                    <li><a href="admin_setting.html"> Cài đặt</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content-area">
+
+            <section class="admin-content-card">
+                <h2 class="page-title">Quản Lý Khách Hàng</h2>
+
+                <div class="controls-bar">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Tìm kiếm">
+                    </div>
+                    <div class="header-actions">
+                        <button class="action-btn export-btn"><i class="fas fa-file-export"></i> Xuất</button>
+                        <button class="action-btn customize-btn"><i class="fas fa-cog"></i> Tùy Chọn</button>
+                    </div>
+                </div>
+                <div class="customer-list-container">
+<!--                    <div class="search-bar">-->
+<!--                        <i class="fas fa-search"></i>-->
+<!--                        <input type="text" placeholder="Tìm kiếm">-->
+<!--                    </div>-->
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" class="select-all"></th>
+                                <th>Khách Hàng</th>
+                                <th>Số Điện Thoại</th>
+                                <th>Email</th>
+                                <th>Vị trí</th>
+                                <th>Ngày Tạo</th>
+                                <th>Trạng Thái</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td class="customer-name-cell">
+                                    <a href="admin_customer_detail.html" class="customer-name-link">
+                                        Nguyễn Trường Giang
+                                    </a>
+                                </td>
+                                <td>0944459364</td>
+                                <td>nguyentruonggiang@gmail.com</td>
+                                <td>Quảng Ngãi</td>
+                                <td>01/10/2005</td>
+                                <td><span class="status active-status">Hoạt Động</span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td class="customer-name-cell">
+            <span class="customer-name-underline">
+                Trần Thị B
+            </span>
+                                </td>
+                                <td>0903092312</td>
+                                <td>tranthib@gmail.com</td>
+                                <td>Hồ Chí Minh</td>
+                                <td>05/15/2023</td>
+                                <td><span class="status active-status">Hoạt Động</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <button class="page-nav prev">Quay lại</button>
+                        <div class="page-numbers">
+                            <button class="page-num active">1</button>
+                            <button class="page-num">2</button>
+                            <button class="page-num">3</button>
+                        </div>
+                        <button class="page-nav next">Tiếp theo</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME DECOR - NHẬP MÃ XÁC NHẬP</title>
+    <link rel="icon" type="image/png"  href="../img/logo.png" >
+
+    <link rel="stylesheet" href="../css/otp_pass.css">
+</head>
+<body>
+
+<div class="container">
+    <form action="login_pass_new.html" class="otp-form">
+        <h1>Nhập mã xác nhận</h1>
+        <p>Mã xác minh của bạn sẽ được gửi qua email. Vui lòng kiểm tra hộp thư đến.</p>
+
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" class="otp-input" required>
+            <input type="text" maxlength="1" class="otp-input" required>
+            <input type="text" maxlength="1" class="otp-input" required>
+            <input type="text" maxlength="1" class="otp-input" required>
+        </div>
+
+        <p class="resend-info">
+            Vui lòng chờ <span id="countdown">60 giây</span> để gửi lại.
+        </p>
+
+        <a href="login_pass_new.html" class="button-link">Tiếp tục</a>
+
+        <div class="back-link-wrapper">
+            <a href="login_forgot_password.html">Quay lại</a>
+        </div>
+    </form>
+</div>
+
+<!--<script>-->
+<!--    const inputs = document.querySelectorAll('.otp-input');-->
+<!--    inputs.forEach((input, index) => {-->
+<!--        input.addEventListener('keyup', (e) => {-->
+<!--            if (input.value.length === 1 && index < inputs.length - 1) {-->
+<!--                inputs[index + 1].focus();-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+
+<!--    let time = 59;-->
+<!--    const countdownEl = document.getElementById('countdown');-->
+
+<!--    const interval = setInterval(() => {-->
+<!--        countdownEl.textContent = time + ' giây';-->
+<!--        time&#45;&#45;;-->
+<!--        if (time < 0) {-->
+<!--            clearInterval(interval);-->
+<!--            countdownEl.innerHTML = '<a href="#" class="resend-link">Gửi lại mã</a>';-->
+<!--        }-->
+<!--    }, 1000);-->
+<!--</script>-->
+
+</body>
+</html>

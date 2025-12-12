@@ -1,0 +1,143 @@
+:root {
+    --grad-clr1: #8B5E3C;
+    --grad-clr2: #5A3E2A;
+    --linear-grad: linear-gradient(to right, #8B5E3C, #5A3E2A);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: #f6f5f7;
+}
+
+.container {
+    width: 400px;
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center; /* Căn giữa toàn bộ nội dung trong container */
+}
+
+h1 {
+    color: var(--grad-clr1);
+    font-size: 26px;
+    margin-bottom: 10px; /* Thêm margin cho tiêu đề */
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    /* Đảm bảo ô OTP căn giữa trong form */
+    width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+.otp-input {
+    width: 55px; /* Điều chỉnh kích thước ô nhỏ hơn một chút */
+    height: 55px;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.otp-input:focus {
+    border-color: var(--grad-clr1);
+    box-shadow: 0 0 5px rgba(139, 94, 60, 0.5);
+}
+
+.resend-info {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.resend-link {
+    color: var(--grad-clr1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 20px;
+    background: var(--grad-clr2);
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #fff;
+    color: var(--grad-clr1);
+    border: 1px solid var(--grad-clr1);
+}
+
+/* Style mới cho liên kết quay lại ở dưới */
+.back-link-wrapper {
+    margin-top: 20px;
+}
+
+.back-link-wrapper a {
+    color: var(--grad-clr1);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.back-link-wrapper a:hover {
+    color: var(--grad-clr2);
+}
+/* Style cho liên kết (<a>) đóng vai trò là nút */
+.button-link {
+    /* Đảm bảo liên kết chiếm toàn bộ chiều rộng (như nút) */
+    display: block;
+    text-align: center;
+    text-decoration: none; /* Bỏ gạch chân mặc định của liên kết */
+
+    /* Copy style từ nút <button> */
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 20px;
+    background: var(--grad-clr2);
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hiệu ứng hover cho liên kết (giống nút) */
+.button-link:hover {
+    background: #fff;
+    color: var(--grad-clr1);
+    border: 1px solid var(--grad-clr1);
+}

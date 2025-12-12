@@ -1,0 +1,591 @@
+
+:root {
+    --background-color: #FFFFFF;
+    --primary-color: #8B5E3C;
+    /*--text-color: #3E2F1C;*/
+    --text-color: #3b2f2f;
+    --text-color2:#6b5743;
+    --btn:#A56B43;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+
+}
+#header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    background-color: #fff;
+
+    z-index:999;
+}
+#logo {
+    display: flex;
+}
+.menu {
+    text-decoration: none;
+}
+
+#logo .image {
+
+    margin-left:20px;
+    height: 80px;
+    object-fit: contain;
+}
+#header .brand {
+    font-size: 10px;
+    margin-top: 35px;
+    margin-left:-8px;
+
+}
+#header #name-web {
+    font-weight: bold ;
+    padding-bottom:4px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-right:50px;
+    font-size: 18px;
+    padding: 5px 15px 5px 15px;
+}
+
+.user-login {
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.user-login i {
+
+    color: #000000;
+
+}
+
+
+.user {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    border: 1px solid #000000;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    width: 165px;
+    z-index: 20;
+    transform: translate(30%, 0px);
+
+
+}
+.user a + a {
+    border-top: 1px solid #e0e0e0;
+}
+
+#cart-link {
+    color: #333;
+}
+#cart-link:hover {
+    color:var(--btn);
+}
+#search-link {
+    color:#333;
+}
+#search-link:hover {
+    color: var(--btn);
+}
+
+.user-login:hover .user {
+    display: block;
+
+
+}
+.user-login:hover i {
+    color: var(--primary-color);
+}
+
+
+.user a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.user a:hover {
+    background-color: #f2f2f2;
+}
+.menu {
+    color: var(--text-color);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+/* Khi hover vào menu */
+.menu:hover {
+    color: var(--btn);
+}
+.menu-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu-bar .menu {
+    position: relative;
+    display: flex;
+    padding: 5px 15px 5px 15px;
+    cursor: pointer;
+}
+#product{
+    color: var(--text-color);
+    text-decoration: none;
+
+}
+#product:hover{
+    color: var(--btn);
+}
+
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px 30px;
+    min-width: 260px;
+    z-index: 999;
+}
+
+.product-menu:hover .submenu {
+    display: block;
+}
+.submenu a {
+    display: block;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 0;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.25s;
+    border-radius: 8px;
+}
+
+.submenu a:hover {
+    color: var(--text-color2);
+    background: rgba(139, 94, 60, 0.08);
+}
+/* --- CHÍNH SÁCH THANH TOÁN (PAYMENT POLICY) --- */
+
+/**/
+.banner {
+    /* Đổi URL này thành hình ảnh banner chất lượng cao của bạn */
+    background-image: url('https://i.pinimg.com/736x/4d/3d/19/4d3d19e5c90b8e527538943f196b1c1a.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Chiều cao mong muốn của banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px; /* Tạo khoảng cách với phần nội dung blog */
+}
+
+/* Lớp phủ (Overlay) để chữ dễ đọc hơn */
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45); /* Lớp phủ đen trong suốt */
+    z-index: 1;
+}
+
+.banner-overlay {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.banner-overlay h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.banner-overlay p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+/* DÒNG CHỮ DƯỚI */
+.banner-caption {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: #f6f1ea;
+    padding: 20px 0;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+/* ======================= */
+/* CÁC SETUP NỔI BẬT */
+/* ======================= */
+
+.setup-section {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    background-color: #fff;
+    margin: 70px auto;
+    padding: 50px 70px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    max-width: 1100px;
+}
+
+/* Cột trái tiêu đề dọc */
+.setup-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid #e7dfd6;
+    padding-right: 20px;
+}
+
+.setup-left h2 {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Cột phải nội dung */
+.setup-right h3 {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.setup-right p {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Đường gạch ngang mảnh phía trên */
+.setup-right .divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.12), rgba(0,0,0,0.03));
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+
+/* Responsive cho màn nhỏ */
+@media (max-width: 768px) {
+    .setup-section {
+        grid-template-columns: 1fr;
+        padding: 40px 25px;
+    }
+
+    .setup-left {
+        border-right: none;
+        border-bottom: 2px solid #e7dfd6;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        justify-content: flex-start;
+    }
+
+    .setup-left h2 {
+        writing-mode: horizontal-tb;
+        transform: none;
+        letter-spacing: 2px;
+    }
+}
+.footer {
+    background: #F5F5F5;
+    padding: 50px 0;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+
+.footer-col h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-col a,
+.footer-col p {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-logo {
+    width: 170px;
+    margin: 10px 0 15px 0;
+}
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-icons a{
+    font-size: 20px;
+    margin-right: 10px;
+
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons a:hover,
+.footer-col a:hover {
+    color: var(--btn);
+}
+/* --- CÁC THIẾT LẬP CHUNG CHO SETUP SECTION --- */
+.setup-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    gap: 40px;
+}
+
+.setup-left {
+    flex: 0 0 250px; /* Giữ cột bên trái cố định */
+    padding-top: 15px;
+}
+
+.setup-left h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-right: 20px;
+    text-align: right;
+}
+
+.setup-right {
+    flex: 1; /* Cột bên phải chiếm phần còn lại */
+}
+
+/* Thanh chia tách nội dung */
+.divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 30px 0;
+}
+
+.setup-right h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* List chính (Bước 1, 2, 3...) */
+.online-process-list {
+    list-style: none; /* Bỏ bullet mặc định */
+    padding: 0;
+}
+
+.online-process-list li {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+}
+
+.step-number {
+    font-weight: 700;
+    color: var(--primary-color);
+    display: inline-block;
+    width: 80px; /* Chiều rộng cố định cho chữ "Bước X:" hoặc "X." */
+    min-width: 80px;
+}
+
+.online-process-list strong {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* List con (Nội dung chi tiết) */
+.sub-process-list {
+    list-style: disc; /* Dùng dấu chấm đen cho list con */
+    padding-left: 100px; /* Căn lề để nó thẳng hàng với nội dung bên trên */
+    margin-top: 10px;
+}
+
+.sub-process-list li {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* --- Media Query cho Mobile/Tablet --- */
+@media (max-width: 900px) {
+    .setup-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .setup-left {
+        flex: auto;
+        padding-top: 0;
+        text-align: left;
+    }
+
+    .setup-left h2 {
+        border-right: none;
+        border-left: 3px solid var(--primary-color); /* Chuyển border sang trái */
+        padding-left: 15px;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .sub-process-list {
+        padding-left: 20px; /* Giảm padding list con trên di động */
+    }
+}
+
+
+/* --- CSS CHO CÁC PHẦN TỬ ĐỘC LẬP (NẰM NGOÀI SECTION) --- */
+
+/* Đảm bảo các phần tử nằm ngoài section cũng có chiều rộng và căn giữa */
+.setup-section,
+.divider,
+.online-process-list,
+.setup-right h3,
+body > h3 { /* Căn chỉnh tiêu đề h3 bị tách ra */
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Định dạng cho tiêu đề H3 độc lập */
+body > h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+    margin-top: 40px; /* Tăng khoảng cách phía trên */
+}
+
+/* --- TÁI ĐỊNH DẠNG CÁC LIST CON (sub-process-list) --- */
+
+/* Các style này áp dụng cho cả phần Cách thức mua hàng và Chi tiết quy định */
+
+.online-process-list {
+    list-style: none;
+    padding: 0;
+}
+
+.online-process-list > li {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    border-left: 3px solid rgba(139, 94, 60, 0.1);
+    padding: 10px 0 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.step-number {
+    color: var(--primary-color);
+    display: inline-block;
+    font-size: 1.1rem;
+}
+
+/* List con (Quy định chi tiết) */
+.sub-process-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    background: #fcfcfc;
+    padding: 15px 15px 5px 15px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+    /* Đảm bảo chiều rộng list con không bị tràn ra ngoài */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.sub-process-list li {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.5;
+}
+
+.sub-process-list li::before {
+    content: "\2713"; /* Dấu tick */
+    color: #4CAF50; /* Xanh lá cây */
+    font-weight: bold;
+    display: inline-block;
+    width: 25px;
+    flex-shrink: 0;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 900px) {
+    /* Đảm bảo phần tử độc lập co giãn đúng */
+    .divider,
+    .online-process-list,
+    body > h3 {
+        width: 95%; /* Hơi rộng hơn trên di động */
+    }
+}

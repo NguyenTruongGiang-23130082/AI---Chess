@@ -1,0 +1,102 @@
+:root {
+    --grad-clr1: #8B5E3C;
+    --grad-clr2: #5A3E2A;
+    --linear-grad: linear-gradient(to right, #8B5E3C, #5A3E2A);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background: #f6f5f7;
+}
+
+.container {
+    width: 400px;
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center; /* Căn giữa nội dung */
+}
+
+h1 {
+    color: var(--grad-clr1);
+    font-size: 26px;
+    margin-bottom: 25px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+.infield {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left; /* Đảm bảo input nằm đúng chỗ */
+}
+
+input {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    outline: none;
+    background: #f3f3f3;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+label {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: var(--linear-grad);
+    transition: 0.3s;
+}
+
+input:focus ~ label {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 20px;
+    background: var(--grad-clr2);
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #fff;
+    color: var(--grad-clr1);
+    border: 1px solid var(--grad-clr1);
+}
+
+/* Style mới cho liên kết quay lại ở dưới */
+.back-link-wrapper {
+    margin-top: 20px;
+}
+
+.back-link-wrapper a {
+    color: var(--grad-clr1);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.back-link-wrapper a:hover {
+    color: var(--grad-clr2);
+}

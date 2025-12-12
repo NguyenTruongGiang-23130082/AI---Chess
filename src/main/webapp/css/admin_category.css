@@ -1,0 +1,166 @@
+.category-management-container {
+    /* Giữ nguyên các style bao quanh */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px 30px;
+}
+
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.category-table th, .category-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.category-table thead {
+    background-color: var(--light-bg);
+    color: var(--secondary-text-color);
+}
+
+/* Tái phân bổ chiều rộng cột */
+.col-id {
+    width: 80px; /* Tăng nhẹ ID */
+    text-align: center;
+}
+.col-name {
+    width: auto; /* Để cột Tên Danh Mục chiếm phần lớn không gian còn lại */
+    font-weight: 500;
+}
+.col-product-count {
+    width: 150px; /* Chiều rộng cố định cho Số SP */
+    text-align: center;
+    font-weight: 600;
+}
+.col-actions {
+    width: 120px; /* Chiều rộng cố định cho Thao tác */
+    text-align: center;
+}
+
+/* --- Kế thừa các style khác (Modal và Buttons) --- */
+/* (Các style Modal và Buttons trong câu trả lời trước không bị ảnh hưởng, bạn có thể giữ nguyên) */
+
+/* --- Nút Thêm Danh Mục --- */
+.add-new-category-btn {
+    /* Kế thừa style từ add-new-product-btn */
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+}
+
+.add-new-category-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+
+/* --- Modal (Form Thêm/Chỉnh Sửa) --- */
+
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    z-index: 1060; /* Cao hơn header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Nền tối mờ */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Đặt ở giữa theo chiều dọc */
+    padding: 20px 30px;
+    border: 1px solid #888;
+    width: 40%; /* Chiều rộng form */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--modern-red);
+    text-decoration: none;
+}
+
+.modal-content h3 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Ẩn input slug tự động (Readonly style) */
+#categorySlug {
+    background-color: #f8f9fa;
+    color: var(--secondary-text-color);
+    font-style: italic;
+}

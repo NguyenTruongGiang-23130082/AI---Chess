@@ -1,0 +1,735 @@
+/* Màu sắc chung và Biến */
+:root {
+    --primary-color: #8B5E3C; /* Màu nâu primary */
+    --accent-color: #A56B43; /* Màu nâu sáng hơn cho hover */
+    --text-color: #3b2f2f;
+    --secondary-text-color: #6c757d;
+    --light-bg: #f4f6f9;
+    --border-color: #e0e0e0;
+    --sidebar-width: 250px;
+    --header-height: 60px;
+    --modern-green: #38c172; /* Trend UP / Active */
+    --modern-red: #e3342f; /* Trend DOWN / Locked */
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --hover-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ẩn các class cũ nếu có */
+.kpi-row, .three-cols { display: none; }
+
+/* Reset và Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ---------------- HEADER ---------------- */
+.header {
+    height: var(--header-height);
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-placeholder img {
+    height: 40px;
+    border-radius: 4px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons i {
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-left: 25px;
+    color: var(--secondary-text-color);
+    transition: color 0.2s;
+}
+
+.header-icons i:hover {
+    color: var(--primary-color);
+}
+
+.user-logo {
+    font-size: 1.4rem !important;
+}
+
+/* Dropdown Menu */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    z-index: 1;
+    right: 0;
+    top: calc(100% + 5px);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 5px 0;
+}
+
+.show {display: block;}
+
+/* ---------------- MAIN WRAPPER & SIDEBAR ---------------- */
+.main-wrapper {
+    display: flex;
+    padding-top: var(--header-height);
+    flex: 1;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.03);
+    padding-top: 10px;
+    height: calc(100vh - var(--header-height));
+    position: fixed;
+    overflow-y: auto;
+    left: 0;
+    top: var(--header-height);
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    font-size: 0.95rem;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav li a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+/* Style cho mục đang được chọn (active) */
+.sidebar-nav li.active {
+    background-color: #f4f6f9;
+    border-left: 3px solid var(--primary-color);
+}
+
+.sidebar-nav li.active a {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ---------------- CONTENT (Nội dung chính) ---------------- */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: var(--sidebar-width);
+    transition: margin-left 0.3s ease;
+    background-color: var(--light-bg);
+}
+
+.user-management-panel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* ---------------- THANH ĐIỀU KHIỂN (SEARCH-FILTER-BAR MỚI) ---------------- */
+.search-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Ô tìm kiếm mở rộng (Dùng cho Quản lý Sản phẩm, Người dùng, Khách hàng) */
+.search-input-full {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Ô tìm kiếm có icon (Dùng cho Quản lý Đơn hàng) */
+.controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-filters {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input-order {
+    padding: 8px 12px 8px 35px; /* Tăng padding trái để chứa icon */
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 250px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+}
+
+/* Các bộ lọc Select */
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    outline: none;
+    /* Dành cho select có mũi tên tùy chỉnh */
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%233b2f2f%22%20d%3D%22M287%20177.3l-131.7%20114.3c-2%201.7-4.2%202.5-6.4%202.5s-4.4-.8-6.4-2.5L5.4%20177.3c-3.6-3.1-4.8-8.2-2.7-12.7s6.5-7.3%2011.2-7.3h259.6c4.7%200%208.7%202.8%2011.2%207.3s.9%209.6-2.7%2012.7z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    padding-right: 30px;
+}
+
+/* Nút hành động chung */
+.action-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+/* Nút Xuất (Màu nền tối) */
+.export-product-btn, .export-btn {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.export-product-btn:hover, .export-btn:hover {
+    background-color: #5a4b4b;
+}
+
+/* Nút Thêm Sản phẩm/Người dùng (Màu Primary) */
+.add-new-product-btn, .add-user-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.add-new-product-btn:hover, .add-user-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* ---------------- BẢNG (TABLE) CHUNG ---------------- */
+.user-table-container, .product-table-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    margin-top: 15px; /* Để cách xa thanh điều khiển */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Tiêu đề bảng (Đã thống nhất màu tối) */
+thead {
+    background-color: var(--text-color);
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: var(--light-bg);
+}
+
+/* Cột Khách hàng (User/Customer) */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.user-avatar {
+    font-size: 1.3rem;
+    color: var(--secondary-text-color);
+}
+
+/* Nút xem lịch sử mua hàng */
+.history-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.history-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* ---------------- BADGES VÀ ACTIONS ---------------- */
+/* Badges chung */
+.status-badge, .badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Trạng thái Hoạt động/Đã khóa (Người dùng) */
+.active-status {
+    background-color: #e6f7ed;
+    color: var(--modern-green);
+}
+
+.locked-status {
+    background-color: var(--modern-red);
+    color: white;
+}
+
+/* Thanh Toán (Đơn hàng) */
+.payment-paid {
+    background-color: var(--modern-green);
+    color: white;
+}
+
+.payment-refund {
+    background-color: #fca311;
+    color: white;
+}
+
+.payment-cancelled {
+    background-color: var(--modern-red);
+    color: white;
+}
+
+/* Trạng Thái (Đơn hàng) */
+.status-sent {
+    background-color: #e6f7ed;
+    color: var(--modern-green);
+}
+
+.status-processing {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-delivered {
+    background-color: #e0f7fa;
+    color: #007bff;
+}
+
+/* Thao tác (Icons) */
+.action-icon {
+    font-size: 1.1rem;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+    color: var(--secondary-text-color); /* Màu mặc định xám */
+}
+
+.action-menu {
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--secondary-text-color);
+    padding: 5px;
+    transition: color 0.15s;
+}
+
+/* Styles riêng cho từng loại icon */
+.edit-icon:hover, .action-menu:hover {
+    color: var(--primary-color);
+}
+.delete-icon:hover {
+    color: var(--modern-red);
+}
+.lock-icon {
+    color: var(--modern-red);
+}
+.unlock-icon {
+    color: var(--modern-green);
+}
+
+
+/* ---------------- PHÂN TRANG (PAGINATION) ---------------- */
+.pagination-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.page-link {
+    background-color: white;
+    color: var(--text-color);
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.page-link:hover:not(.active-page):not(.disabled) {
+    background-color: var(--light-bg);
+}
+
+.active-page {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.disabled {
+    color: var(--secondary-text-color);
+    cursor: not-allowed;
+    background-color: #f1f1f1;
+}
+/* Thêm vào file CSS của bạn */
+.clickable-row {
+    cursor: pointer; /* Thay đổi con trỏ chuột thành hình bàn tay */
+}
+
+.clickable-row:hover {
+    background-color: #f5f5f5; /* Thay đổi màu nền khi di chuột qua */
+    transition: background-color 0.2s;
+}
+/* ---------------- CONTENT (Nội dung chính) ---------------- */
+.content {
+    flex-grow: 1;
+    /* Điều chỉnh padding để trông cân đối */
+    padding: 20px 30px;
+    margin-left: var(--sidebar-width);
+    transition: margin-left 0.3s ease;
+    background-color: var(--light-bg);
+}
+
+/* ---------------- TIÊU ĐỀ CHÍNH (Tách biệt) ---------------- */
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 0;
+    /* Thêm đường kẻ ngang và khoảng cách */
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ---------------- KHỐI TRẮNG LỚN BAO QUANH (user-management-panel) ---------------- */
+.user-management-panel {
+    /* Biến thành khối trắng lớn, loại bỏ padding cũ */
+    background-color: #fff;
+    padding: 25px 30px; /* Padding cho nội dung bên trong */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bóng đổ cho khối lớn */
+}
+
+/* ---------------- THANH ĐIỀU KHIỂN (controls-bar) ---------------- */
+.controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Giữ margin-bottom để cách bảng */
+    margin-bottom: 20px;
+}
+
+/* ---------------- BẢNG (TABLE) CHUNG ---------------- */
+/* Loại bỏ style cũ (background, shadow) vì đã được .user-management-panel bao bọc */
+.user-table-container {
+    background-color: transparent; /* Loại bỏ nền trắng cũ */
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none; /* Loại bỏ bóng đổ cũ */
+    margin-top: 0; /* Bỏ margin-top nếu không cần cách controls-bar */
+}
+
+/* Tiêu đề bảng */
+thead {
+    /* ĐỒNG BỘ LAYOUT VỚI TRANG SẢN PHẨM */
+    background-color: var(--light-bg); /* Màu nền xám nhạt */
+    color: var(--secondary-text-color); /* Màu chữ xám xanh nhẹ */
+}
+th {
+    font-weight: 500; /* Giảm độ đậm */
+}
+thead tr {
+    /* Viền ngăn cách giữa header và body */
+    border-bottom: 1px solid var(--border-color);
+}
+tbody tr:first-child td {
+    border-top: 1px solid var(--border-color); /* Viền trên cho hàng dữ liệu đầu tiên */
+}
+/* ---------------- BADGES VÀ ACTIONS ---------------- */
+/* Badges chung */
+.status-badge, .badge {
+    padding: 5px 10px;
+    /* Tăng độ bo tròn để trông hiện đại hơn */
+    border-radius: 20px;
+    font-weight: 600; /* Làm chữ đậm hơn */
+    font-size: 0.8rem; /* Giữ kích thước nhỏ gọn */
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    line-height: 1.2; /* Căn chỉnh lại độ cao */
+}
+
+/* ---------------- Thanh Toán (Đơn hàng) ---------------- */
+/* Đã Thanh Toán (Màu xanh lá đậm) */
+.payment-paid {
+    background-color: var(--modern-green); /* Xanh lá */
+    color: white;
+}
+
+/* Đã Hoàn Tiền (Màu cam/vàng cảnh báo) */
+.payment-refund {
+    background-color: #fca311; /* Màu cam */
+    color: white;
+}
+
+/* Đã Hủy (Màu đỏ/xám) */
+.payment-cancelled {
+    /* Đổi sang màu đỏ đậm hơn (tương đương modern-red) */
+    background-color: var(--modern-red);
+    color: white;
+}
+
+/* ---------------- Trạng Thái (Đơn hàng) ---------------- */
+/* Đã Gửi (Màu xanh lá nhạt) */
+.status-sent {
+    background-color: #e6f7ed; /* Nền xanh lá nhạt */
+    color: var(--modern-green); /* Chữ xanh lá đậm */
+    border: 1px solid var(--modern-green); /* Thêm viền nhẹ */
+}
+
+/* Đang Xử Lý (Màu vàng nhạt) */
+.status-processing {
+    background-color: #fff3cd; /* Nền vàng nhạt */
+    color: #856404; /* Chữ nâu vàng đậm */
+    border: 1px solid #ffc107; /* Thêm viền nhẹ */
+}
+
+/* Đã Giao (Màu xanh dương nhạt) */
+.status-delivered {
+    background-color: #e0f7fa; /* Nền xanh dương nhạt */
+    color: #007bff; /* Chữ xanh dương đậm */
+    border: 1px solid #007bff; /* Thêm viền nhẹ */
+}
+
+/* Thêm trạng thái mới nếu có: Đã Hủy (Tương tự như Đang Xử Lý, nhưng màu đỏ) */
+.status-cancelled {
+    background-color: #f8d7da; /* Nền đỏ nhạt */
+    color: var(--modern-red); /* Chữ đỏ đậm */
+    border: 1px solid var(--modern-red); /* Thêm viền nhẹ */
+}
+
+/* TẠM THỜI ĐỂ LẠI: Trạng thái Hoạt động/Đã khóa (Người dùng) - Dùng trong trang Khách hàng/Người dùng */
+.active-status {
+    background-color: #e6f7ed;
+    color: var(--modern-green);
+}
+
+.locked-status {
+    background-color: var(--modern-red);
+    color: white;
+}
+.export-btn {
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+}
+
+.export-btn:hover{
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+/* ... CSS Khối 1 của bạn ... */
+
+/* ---------------- HEADER ---------------- */
+/* ... */
+.header-icons i:hover {
+    color: var(--primary-color);
+}
+
+.user-logo {
+    font-size: 1.4rem !important;
+}
+
+/* Dropdown Menu - CÁC QUY TẮC BẠN ĐÃ CUNG CẤP */
+.user-dropdown, .notification-dropdown, .gmail-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* Thêm con trỏ cho dễ nhìn */
+}
+
+.dropdown-content {
+    display: none; /* Đảm bảo nó ẩn mặc định */
+    position: absolute;
+    /* ... các thuộc tính khác của dropdown-content ... */
+    z-index: 1050; /* Tăng z-index */
+    right: 0;
+    top: calc(100% + 5px);
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 500px; /* Thêm max-height */
+}
+
+/* Định nghĩa lại các thuộc tính đặc biệt cho Notification/Gmail */
+.gmail-content, .notification-content {
+    min-width: 250px;
+    right: -10px;
+}
+/* Thêm Header cho Dropdown */
+.dropdown-header {
+    padding: 10px 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    display: block;
+    position: sticky; /* Để header dính khi cuộn */
+    top: 0;
+    background-color: #fff;
+    z-index: 2;
+}
+
+/* QUY TẮC HIỂN THỊ KHI HOVER */
+.user-dropdown:hover .dropdown-content,
+.notification-dropdown:hover .dropdown-content,
+.gmail-dropdown:hover .dropdown-content {
+    display: block;
+}
